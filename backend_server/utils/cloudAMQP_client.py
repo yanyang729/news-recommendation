@@ -1,7 +1,8 @@
 import json
 import pika
 
-class CloundAMQPClient:
+
+class CloundAMQPClient():
     def __init__(self, cloud_amqp_url, queue_name):
         self.cloud_amqp = cloud_amqp_url
         self.queue_name = queue_name
@@ -18,15 +19,16 @@ class CloundAMQPClient:
         print "[x] Sent message to %s:%s" % (self.queue_name, message)
 
     def getMessage(self):
-        method_frame, header_frame, body = self.channel.basic_get(self.queue_name)
+        method_frame, header_frame, body = self.channel.basic_get(
+            self.queue_name)
         if method_frame:
             print "[x] Received message from %s:%s" % (self.queue_name, body)
             self.channel.basic_ack(method_frame.delivery_tag)
             return json.loads(body)
 
         else:
-            print  "No message returned."
+            print "No message returned."
             return None
 
-    def sleep(self,seconds):
+    def sleep(self, seconds):
         self.connection.sleep(seconds)
