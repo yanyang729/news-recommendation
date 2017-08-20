@@ -5,9 +5,9 @@
  * Created by yangyang on 8/9/17.
  */
 import React from 'react';
-import SignUpForm from './SignUpForm'
+import SignUpForm from './SignUpForm';
 
-class LoginPage extends React.Component {
+class SignUpPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -25,7 +25,6 @@ class LoginPage extends React.Component {
     }
 
 
-
     // pre-submission
     processForm(event) {
         event.preventDefault();
@@ -33,6 +32,31 @@ class LoginPage extends React.Component {
         const email = this.state.user.email;
         const password = this.state.user.password;
         const confirm_password = this.state.user.confirm_password;
+
+        fetch('http://localhost:3000/auth/signup',{
+            method: 'POST',
+            cache: false,
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email:email,
+                password:password
+            })
+        })
+            .then(response => response.json())
+            .then(response => {
+                if (response.status === 200) {
+                    this.setState({errors:{}});
+                    this.context.router.replace('/login'); // nope
+                } else {
+                    console.log(response);
+                    const errors = response.errors ? response.errors : {};
+                    errors.summary = response.message;
+                    this.setState({errors:errors});
+                }
+            }) // TODO: check after refactored
     }
 
     changeUser(event) {
@@ -66,4 +90,5 @@ class LoginPage extends React.Component {
 
 }
 
-export default LoginPage;
+
+export default SignUpPage;

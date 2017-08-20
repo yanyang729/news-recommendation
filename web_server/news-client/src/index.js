@@ -3,12 +3,14 @@
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App/App';
-import './index.css';
-import SignUpPage from "./SignUpPage/SignUpPage";
-import LoginPage from './Login/LoginPage';
 
-ReactDOM.render(
-    <SignUpPage />,
+import './index.css';
+import Base from './Base/Base'
+import App from './App/App'
+
+import 'materialize-css/dist/css/materialize.min.css';
+import 'materialize-css/dist/js/materialize';
+
+ReactDOM.render(<App/>,
     document.getElementById('root')
-)
+);

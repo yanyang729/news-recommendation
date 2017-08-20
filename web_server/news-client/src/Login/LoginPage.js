@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import LoginForm from './LoginForm'
-
+import Auth from '../Auth/Auth'
 
 class LoginPage extends React.Component {
     constructor(props) {
@@ -25,10 +25,36 @@ class LoginPage extends React.Component {
         event.preventDefault();
         const email = this.state.user.email;
         const password = this.state.user.password;
+
+        fetch('http://localhost:3000/auth/login',{
+            method: 'POST',
+            cache: false,
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email:email,
+                password:password
+            })
+        })
+            .then(response => response.json())
+            .then(response => {
+                if (response.status === 200) {
+                    this.setState({errors:{}});
+                    console.log(response);
+                    Auth.authenticateUser(response.token, response.email);
+
+                } else {
+                    const errors = response.errors ? response.errors : {};
+                    errors.summary = response.message;
+                    this.setState({errors:errors});
+                }
+            }) // TODO: check after refactored
     }
 
     changeUser(event) {
-        console.log(event.target.name)
+        console.log(event.target.name);
         const field = event.target.name;
         const user = this.state.user;
         user[field] = event.target.value;
@@ -44,5 +70,6 @@ class LoginPage extends React.Component {
     }
 
 }
+
 
 export default LoginPage;

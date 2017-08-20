@@ -20,7 +20,7 @@ app.all('*', function(req, res, next) {
 });
 
 app.use('/', index);
-app.use('/news', news)
+app.use('/news', news);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
