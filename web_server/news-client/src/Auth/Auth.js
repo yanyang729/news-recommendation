@@ -14,7 +14,7 @@ class Auth{
      * if authenticated
      */
 
-    static isAuthenticated () {
+    static isUserAuthenticated () {
         return localStorage.getItem('token') !== null ;
     }
     /**

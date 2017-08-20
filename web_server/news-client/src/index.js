@@ -3,14 +3,15 @@
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import './index.css';
-import Base from './Base/Base'
-import App from './App/App'
 
+import { browserHistory, Router } from 'react-router';
+import routes from './routes';
 import 'materialize-css/dist/css/materialize.min.css';
-import 'materialize-css/dist/js/materialize';
+import 'materialize-css/dist/js/materialize.js';
 
-ReactDOM.render(<App/>,
+
+ReactDOM.render(
+    <Router history={browserHistory} routes={routes} />,
     document.getElementById('root')
-);
+)
