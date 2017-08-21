@@ -29,7 +29,7 @@ class Auth{
         return localStorage.getItem('token')
     }
 
-    static getEmial () {
+    static getEmail () {
         return localStorage.getItem('email')
     }
 

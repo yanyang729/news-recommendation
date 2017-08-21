@@ -1,0 +1,4 @@
+{
+  "mongoDbUri": "mongodb://test:test@ds153123.mlab.com:53123/news-user",
+  "jwtSecret": "random string!!"
+}

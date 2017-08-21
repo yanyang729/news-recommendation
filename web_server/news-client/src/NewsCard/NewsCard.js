@@ -11,7 +11,7 @@ class NewsCard extends React.Component{
 
     render() {
         return (
-            <div className="news-container" onClick={this.redirectToUrl(this.props.news.url)}>
+            <div className="news-container" onClick={() => this.redirectToUrl(this.props.news.url)}>
                 <div className="row">
                     <div className="col s4 fill">
                         <img src={this.props.news.urlToImage} alt="news" />
