@@ -9,6 +9,5 @@ def test_basic():
     print 'test passed'
 
 
-# TODO: need to run test
 if __name__ == '__main__':
     test_basic()

@@ -4,5 +4,5 @@ python-jsonrpc
 pymongo
 redis
 requests
-sklearn
+scikit-learn
 newspaper

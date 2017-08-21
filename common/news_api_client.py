@@ -1,10 +1,7 @@
 import requests
 import json
 
-NEWS_API_ENDPOINT = 'https://newsapi.prg/v1/'
-# TODO: add api key
-NEWS_API_KEY = ''
-
+NEWS_API_ENDPOINT = 'https://newsapi.org/v1/'
 ARTICLES_API = 'articles'
 
 BBC_NEWS = 'bbc-news'
@@ -13,6 +10,7 @@ CNN = 'cnn'
 
 DEFAULT_SOURCES = [CNN, BBC_NEWS]
 SORT_BY_TOP = 'top'
+NEWS_API_KEY = '0df136a3c2a044e19a1a67254f681f6a'
 
 
 def buildUrl(endPoint=NEWS_API_ENDPOINT, apiName=ARTICLES_API):
@@ -34,8 +32,8 @@ def getNewsFromSource(sources=DEFAULT_SOURCES, sortBy=SORT_BY_TOP):
         res_json = json.loads(response.content)
 
         if res_json and res_json['status'] == 'ok' and res_json['source']:
-            for news in res_json['articles']:
-                news['source'] = res_json['source']
+            for article in res_json['articles']:
+                article['source'] = res_json['source']
+            articles += res_json['articles']
 
-            articles += news['source']
     return articles

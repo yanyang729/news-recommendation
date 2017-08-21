@@ -3,7 +3,7 @@ import random
 import os
 from lxml import html
 
-USER_AGENTS_FILE =
+USER_AGENTS_FILE = ""
 USER_AGENTS = []
 
 with open(USER_AGENTS_FILE, 'r') as f:
@@ -27,4 +27,5 @@ def extract_news(news_url):
 
     try:
         tree = html.fromstring(response.content)
-        response
+    except:
+        pass
