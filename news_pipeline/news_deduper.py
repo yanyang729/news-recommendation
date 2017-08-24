@@ -15,7 +15,7 @@ DEDUPE_NEWS_TASK_QUEUE_NAME = "news-deduper"
 
 SLEEP_TIME_IN_SECONDS = 1
 
-NEWS_TABLE_NAME = "news-test"
+NEWS_TABLE_NAME = "news"
 
 SAME_NEWS_SIMILARITY_THRESHOLD = 0.9
 
@@ -53,14 +53,14 @@ def handle_message(msg):
 
         rows, _ = sim_mat.shape
 
-        for row in range(1,rows):
+        for row in range(1, rows):
             similarity = sim_mat[row,0]
             if similarity > SAME_NEWS_SIMILARITY_THRESHOLD:
                 print 'Ignore duplicates'
                 return
 
     task['publishedAt'] = parser.parse(task['publishedAt'])
-    db[NEWS_TABLE_NAME].replace_one({'digest':task['digest']}, task, upsert=True)
+    db[NEWS_TABLE_NAME].replace_one({'digest': task['digest']}, task, upsert=True)
     print "=" * 10 + "inserted one news in mongodb" + "=" * 10
 
 while True:
