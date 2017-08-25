@@ -3,11 +3,29 @@
  */
 import React from 'react';
 import './NewsCard.css';
+import Auth from '../Auth/Auth';
 
 class NewsCard extends React.Component{
     redirectToUrl(url) {
+        this.sendClickLog();
         window.open(url,'_blank');
     }
+
+      sendClickLog() {
+        let url = 'http://localhost:3000/news/userId/' + Auth.getEmail()
+                  + '/newsId/' + this.props.news.digest;
+
+        let request = new Request(encodeURI(url), {
+          method: 'POST',
+          headers: {
+            'Authorization': 'bearer ' + Auth.getToken(),
+          },
+          cache: false});
+
+        fetch(request);
+      }
+
+
 
     render() {
         return (

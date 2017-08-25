@@ -19,6 +19,10 @@ class RequestHandler(pyjsonrpc.HttpRequestHandler):
     def getNewsSummariesForUser(self, user_id, page_num):
         return operations.getNewsSummariesForUser(user_id, page_num)
 
+    @pyjsonrpc.rpcmethod
+    def logNewsClickForUser(self, user_id, news_id):
+        return operations.logNewsClickForUser(user_id, news_id)
+
 
 HTTP_SERVER = pyjsonrpc.ThreadingHttpServer(
     server_address=(SERVER_HOST,SERVER_PORT),
