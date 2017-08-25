@@ -33,7 +33,7 @@ def handle_message(msg):
     article.download()
     article.parse()
 
-    task['text'] = article.text.decode('utf-8')
+    task['text'] = article.text.encode('utf-8')
 
     dedupe_news_queue_client.sendMessage(task)
 

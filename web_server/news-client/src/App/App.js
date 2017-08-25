@@ -10,7 +10,7 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <img className='logo' src={logo} alt='logo'/>
+                {/*<img className='logo' src={logo} alt='logo'/>*/}
                 <div className='container'>
                     <NewsPanel />
                 </div>

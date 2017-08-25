@@ -8,9 +8,9 @@ import json
 sys.path.append(os.path.join(os.path.dirname(__file__), '..','common'))
 import mongodb_client
 
-BATCH_SIZE = 10
+BATCH_SIZE = 5
 NEWS_TABLE_NAME = 'news'
-NEWS_LIMIT = 30
+NEWS_LIMIT = 100
 REDIS_HOST = 'localhost'
 REDIS_PORT = 6379
 USER_NEWS_TTL_IN_SECONDS = 60*10
@@ -43,5 +43,5 @@ def getNewsSummariesForUser(user_id, page_num):
 
         sliced_news = total_news[begin_index: end_index]
 
-    return loads(dumps(sliced_news)) # TODO: check
+    return json.loads(dumps(sliced_news)) # TODO: check
 
