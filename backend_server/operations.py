@@ -63,6 +63,8 @@ def getNewsSummariesForUser(user_id, page_num):
         del news['text']
         if news['class'] == topPreference:
             news['reason'] = 'Recommend'
+        else:
+            news['reason'] = news['class']
         if news['publishedAt'].date() == datetime.today().date():
             news['time'] = 'today'
 

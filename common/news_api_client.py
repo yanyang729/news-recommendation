@@ -10,7 +10,7 @@ CNN = 'cnn'
 
 DEFAULT_SOURCES = [CNN, BBC_NEWS]
 SORT_BY_TOP = 'top'
-NEWS_API_KEY = '0df136a3c2a044e19a1a67254f681f6a'
+NEWS_API_KEY = '5df1f9be52c84f82bde43875f141303f'
 
 
 def buildUrl(endPoint=NEWS_API_ENDPOINT, apiName=ARTICLES_API):
@@ -27,7 +27,7 @@ def getNewsFromSource(sources=DEFAULT_SOURCES, sortBy=SORT_BY_TOP):
             'sortBy': sortBy
         }
 
-        response = requests.get(buildUrl(), params=payload)
+        response = requests.get(buildUrl(), params=payload,verify=False)
 
         res_json = json.loads(response.content)
 
