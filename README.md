@@ -1,4 +1,13 @@
 # news-recommendation
+This is a web app that:
+- Built with React.
+- Collect news from multiple news sources and apply ML(tf-idf) to remove duplicates,
+- Service Oriented, multiple backend servces commucating through jsonrpc, 
+- Automatically recommend news based on user click logs. 
+
+Click here to see the demo
+
+
 
 
 ## pylint
