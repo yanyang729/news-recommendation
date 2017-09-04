@@ -20,7 +20,7 @@ Click here to see the [demo](http://34.214.18.41:3000/)
 - ...
 
 
-## Deployment on AWS
+## Setup
 install redis
 ```
 sudo apt install make
@@ -58,13 +58,6 @@ sudo apt-get install -y mongodb-org
 sudo service mongod start
 ```
 
-```
-# in news-client folder
-npm install
-npm run build
-# in new-server folder
-npm install
-npm start
 
 
 
