@@ -8,7 +8,9 @@ This is a web app that:
 - Service Oriented, multiple backend servces commucating through jsonrpc, 
 - Automatically recommend news based on user click logs. 
 
-Click here to see the demo
+Click here to see the [demo](http://34.214.18.41:3000/)
+- You can either sign up or use my account yangyang729@gmail.com / 12345678 to login.
+- Because the demo runs on Amazon free tier instance, it is not fully functioning in terms of model traning and news recommendation.
 
 ## To-Do:
 
@@ -56,6 +58,13 @@ sudo apt-get install -y mongodb-org
 sudo service mongod start
 ```
 
+```
+# in news-client folder
+npm install
+npm run build
+# in new-server folder
+npm install
+npm start
 
 
 
