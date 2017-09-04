@@ -6,3 +6,4 @@ redis
 requests
 scikit-learn
 newspaper
+scipy
