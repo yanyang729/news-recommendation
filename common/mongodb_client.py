@@ -1,10 +1,14 @@
 from pymongo import MongoClient
+import os
+import sys
+import json
 
-MONGO_DB_HOST = 'localhost'
-MONGO_DB_PORT = '27017'
-DB_NAME = 'news'
+with open("../config/common_config.json") as f:
+    config = json.load(f)
 
-client = MongoClient('%s:%s' % (MONGO_DB_HOST, MONGO_DB_PORT))
+config_mongodb_client = config['mongodb_client']
 
-def get_db(db=DB_NAME):
+client = MongoClient('%s:%s' % (config_mongodb_client['MONGO_DB_HOST'], config_mongodb_client['MONGO_DB_PORT']))
+
+def get_db(db=config_mongodb_client['DB_NAME']):
     return client[db]

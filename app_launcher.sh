@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-#todo:
+# TODO:
 # start web client
 # start 4040 5050
 # start pipline to get news(option)

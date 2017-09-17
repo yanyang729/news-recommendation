@@ -1,16 +1,19 @@
 import requests
 import json
 
-NEWS_API_ENDPOINT = 'https://newsapi.org/v1/'
-ARTICLES_API = 'articles'
+with open("../config/common_config.json") as f:
+    config = json.load(f)['news_api_client']
 
-BBC_NEWS = 'bbc-news'
-BBC_SPORT = 'bbc-sport'
-CNN = 'cnn'
+NEWS_API_ENDPOINT = config['NEWS_API_ENDPOINT']
+ARTICLES_API = config['ARTICLES_API']
+
+BBC_NEWS = config['BBC_NEWS']
+BBC_SPORT = config['BBC_SPORT']
+CNN = config['CNN']
 
 DEFAULT_SOURCES = [CNN, BBC_NEWS]
-SORT_BY_TOP = 'top'
-NEWS_API_KEY = '5df1f9be52c84f82bde43875f141303f'
+SORT_BY_TOP = config['SORT_BY_TOP']
+NEWS_API_KEY = config['NEWS_API_KEY']
 
 
 def buildUrl(endPoint=NEWS_API_ENDPOINT, apiName=ARTICLES_API):

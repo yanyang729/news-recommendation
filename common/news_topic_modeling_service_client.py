@@ -1,6 +1,10 @@
 import pyjsonrpc
+import json
 
-URL = "http://localhost:6060"
+with open("../config/common_config.json") as f:
+    config = json.load(f)['news_topic_modeling_service_client']
+
+URL = config['URL']
 
 client = pyjsonrpc.HttpClient(url=URL)
 
