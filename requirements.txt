@@ -1,4 +1,4 @@
-pika
+pika==0.10.0
 python-dateutil
 python-jsonrpc
 pymongo
@@ -6,6 +6,10 @@ redis
 requests
 scikit-learn
 newspaper
+<<<<<<< HEAD
 pandas
 tensorflow
 watchdog
+=======
+scipy
+>>>>>>> 3ea6446bc652c7832a81b1d7b48db5347cf4ae76

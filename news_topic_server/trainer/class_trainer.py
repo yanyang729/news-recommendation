@@ -40,6 +40,10 @@ def main(unused_argv):
     y_test = test_df[0]
 
     # Process vocabulary
+    # TODO:
+    # remove stopwords/punctuation/lowercase
+    # word2vec
+
     vocab_processor = learn.preprocessing.VocabularyProcessor(MAX_DOCUMENT_LENGTH)
     x_train = np.array(list(vocab_processor.fit_transform(x_train)))
     x_test = np.array(list(vocab_processor.transform(x_test)))

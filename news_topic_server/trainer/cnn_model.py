@@ -1,10 +1,13 @@
 import tensorflow as tf
 
+
 EMBEDDING_SIZE = 80
 N_FILTERS = 10
 WINDOW_SIZE = 10
 FILTER_SHAPE1 = [WINDOW_SIZE, EMBEDDING_SIZE]
 FILTER_SHAPE2 = [WINDOW_SIZE, N_FILTERS]
+FILTER_SHAPE3 = [WINDOW_SIZE, N_FILTERS]
+
 POOLING_WINDOW = 4
 POOLING_STRIDE = 2
 
@@ -39,10 +42,18 @@ def generate_cnn_model(n_classes, n_words):
             padding='SAME')
         # Transpose matrix so that n_filters from convolution becomes width.
         pool1 = tf.transpose(pool1, [0, 1, 3, 2])
+
       with tf.variable_scope('CNN_layer2'):
         # Second level of convolution filtering.
         conv2 = tf.contrib.layers.convolution2d(
             pool1, N_FILTERS, FILTER_SHAPE2, padding='VALID')
+        # Max across each filter to get useful features for classification.
+        pool2 = tf.squeeze(tf.reduce_max(conv2, 1), squeeze_dims=[1])
+
+      with tf.variable_scope('CNN_layer3'):
+        # Second level of convolution filtering.
+        conv2 = tf.contrib.layers.convolution2d(
+            pool1, N_FILTERS, FILTER_SHAPE3, padding='VALID')
         # Max across each filter to get useful features for classification.
         pool2 = tf.squeeze(tf.reduce_max(conv2, 1), squeeze_dims=[1])
 
