@@ -1,0 +1,30 @@
+{
+  "news_deduper":{
+    "DEDUPE_NEWS_TASK_QUEUE_URL" : "amqp://rcsdmawz:QDrDPYaGXyAA0WU8NiVWopTTH3yVkULw@wasp.rmq.cloudamqp.com/rcsdmawz",
+    "DEDUPE_NEWS_TASK_QUEUE_NAME" : "news-deduper",
+    "SLEEP_TIME_IN_SECONDS" : 1,
+    "NEWS_TABLE_NAME" : "news",
+    "SAME_NEWS_SIMILARITY_THRESHOLD" : 0.9
+  },
+  "news_fetcher":{
+    "DEDUPE_NEWS_TASK_QUEUE_URL" : "amqp://rcsdmawz:QDrDPYaGXyAA0WU8NiVWopTTH3yVkULw@wasp.rmq.cloudamqp.com/rcsdmawz",
+    "DEDUPE_NEWS_TASK_QUEUE_NAME" : "news-deduper",
+    "SCRAPE_NEWS_TASK_QUEUE_URL" : "amqp://holajbod:izGGmsaUFTKfY1gOSSeTN8N466Yi6_1C@crane.rmq.cloudamqp.com/holajbod",
+    "SCRAPE_NEWS_TASK_QUEUE_NAME" : "news-task",
+    "SLEEP_TIME_IN_SECONDS" : 5
+  },
+  "news_monitor":{
+    "SLEEP_TIME_IN_SECONDS" : 10,
+    "NEWS_TIME_OUT_IN_SECONDS" : 259200,
+    "REDIS_HOST" : "localhost",
+    "REDIS_PORT" : 6379,
+    "SCRAPE_NEWS_TASK_QUEUE_URL" : "amqp://holajbod:izGGmsaUFTKfY1gOSSeTN8N466Yi6_1C@crane.rmq.cloudamqp.com/holajbod",
+    "SCRAPE_NEWS_TASK_QUEUE_NAME" : "news-task"
+  },
+    "queue_helper":{
+    "DEDUPE_NEWS_TASK_QUEUE_URL" : "amqp://rcsdmawz:QDrDPYaGXyAA0WU8NiVWopTTH3yVkULw@wasp.rmq.cloudamqp.com/rcsdmawz",
+    "DEDUPE_NEWS_TASK_QUEUE_NAME" : "news-deduper",
+    "SCRAPE_NEWS_TASK_QUEUE_URL" : "amqp://holajbod:izGGmsaUFTKfY1gOSSeTN8N466Yi6_1C@crane.rmq.cloudamqp.com/holajbod",
+    "SCRAPE_NEWS_TASK_QUEUE_NAME" : "news-task"
+  }
+}

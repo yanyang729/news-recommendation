@@ -1,7 +1,8 @@
 import requests
 import json
+import os
 
-with open("../config/common_config.json") as f:
+with open(os.path.join(os.path.dirname(__file__),'..','config','common_config.json')) as f:
     config = json.load(f)['news_api_client']
 
 NEWS_API_ENDPOINT = config['NEWS_API_ENDPOINT']

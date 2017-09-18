@@ -1,8 +1,17 @@
 {
   "operations":{
-
+    "BATCH_SIZE" : 5,
+    "NEWS_TABLE_NAME" : "news",
+    "NEWS_LIMIT" : 100,
+    "REDIS_HOST" : "localhost",
+    "REDIS_PORT" : 6379,
+    "USER_NEWS_TTL_IN_SECONDS" : 600,
+    "CLICK_LOGS_TABLE_NAME" : "clicklogs",
+    "LOG_CLICKS_TASK_QUEUE_URL" : "amqp://ymrbdobz:bMt0g7JQ_OKr8F9CuKz9T3Sks5BYMcN9@clam.rmq.cloudamqp.com/ymrbdobz",
+    "LOG_CLICKS_TASK_QUEUE_NAME" : "log-clicks"
   },
   "server":{
-
+  "SERVER_HOST" :"localhost",
+  "SERVER_PORT" : 4040
   }
 }

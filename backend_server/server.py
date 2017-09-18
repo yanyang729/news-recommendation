@@ -2,10 +2,14 @@
 
 import pyjsonrpc
 import operations
+import os
+import json
 
+with open(os.path.join(os.path.dirname(__file__),'..','config','backend_server_config.json')) as f:
+    config = json.load(f)['server']
 
-SERVER_HOST = 'localhost'
-SERVER_PORT = 4040
+SERVER_HOST = config['SERVER_HOST']
+SERVER_PORT = config['SERVER_PORT']
 
 class RequestHandler(pyjsonrpc.HttpRequestHandler):
     """RPC requst handler"""

@@ -1,7 +1,9 @@
 import pyjsonrpc
 import json
+import os
+import sys
 
-with open("../config/common_config.json") as f:
+with open(os.path.join(os.path.dirname(__file__),'..','config','common_config.json')) as f:
     config = json.load(f)['news_topic_modeling_service_client']
 
 URL = config['URL']

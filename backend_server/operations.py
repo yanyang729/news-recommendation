@@ -10,18 +10,23 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..','common'))
 import mongodb_client
 from cloudAMQP_client import CloundAMQPClient as CloudAMQPClient
 import news_recommendation_service_client
+import json
 
-BATCH_SIZE = 5
-NEWS_TABLE_NAME = 'news'
-NEWS_LIMIT = 100
-REDIS_HOST = 'localhost'
-REDIS_PORT = 6379
-USER_NEWS_TTL_IN_SECONDS = 60*10
 
-CLICK_LOGS_TABLE_NAME = 'clicklogs'
+with open(os.path.join(os.path.dirname(__file__),'..','config','backend_server_config.json')) as f:
+    config = json.load(f)['operations']
 
-LOG_CLICKS_TASK_QUEUE_URL = "amqp://ymrbdobz:bMt0g7JQ_OKr8F9CuKz9T3Sks5BYMcN9@clam.rmq.cloudamqp.com/ymrbdobz"
-LOG_CLICKS_TASK_QUEUE_NAME = "log-clicks"
+BATCH_SIZE = config['BATCH_SIZE']
+NEWS_TABLE_NAME = config['NEWS_TABLE_NAME']
+NEWS_LIMIT = config['NEWS_LIMIT']
+REDIS_HOST = config['REDIS_HOST']
+REDIS_PORT = config['REDIS_PORT']
+USER_NEWS_TTL_IN_SECONDS = config['USER_NEWS_TTL_IN_SECONDS']
+
+CLICK_LOGS_TABLE_NAME = config['CLICK_LOGS_TABLE_NAME']
+
+LOG_CLICKS_TASK_QUEUE_URL = config['LOG_CLICKS_TASK_QUEUE_URL']
+LOG_CLICKS_TASK_QUEUE_NAME = config['LOG_CLICKS_TASK_QUEUE_NAME']
 
 cloudAMQP_client = CloudAMQPClient(LOG_CLICKS_TASK_QUEUE_URL, LOG_CLICKS_TASK_QUEUE_NAME)
 redis_client = redis.StrictRedis(REDIS_HOST, REDIS_PORT, db=0)
