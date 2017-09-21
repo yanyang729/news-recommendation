@@ -5,9 +5,8 @@ import pandas as pd
 import pickle
 import shutil
 import tensorflow as tf
-
 from sklearn import metrics
-
+from cleaner import myclean
 learn = tf.contrib.learn
 
 REMOVE_PREVIOUS_MODEL = True
@@ -30,6 +29,7 @@ def main(unused_argv):
 
     # Prepare training and testing data
     df = pd.read_csv(DATA_SET_FILE, header=None)
+    df[1] = [ myclean(x) for x in df[1]]
     train_df = df[0:400]
     test_df = df.drop(train_df.index)
 
@@ -38,11 +38,6 @@ def main(unused_argv):
     y_train = train_df[0]
     x_test = test_df[1]
     y_test = test_df[0]
-
-    # Process vocabulary
-    # TODO:
-    # remove stopwords/punctuation/lowercase
-    # word2vec
 
     vocab_processor = learn.preprocessing.VocabularyProcessor(MAX_DOCUMENT_LENGTH)
     x_train = np.array(list(vocab_processor.fit_transform(x_train)))

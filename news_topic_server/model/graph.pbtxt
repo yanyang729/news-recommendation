@@ -451,7 +451,7 @@ node {
             size: 2
           }
         }
-        tensor_content: "O\010\000\000P\000\000\000"
+        tensor_content: "\377\006\000\000P\000\000\000"
       }
     }
   }
@@ -489,7 +489,7 @@ node {
         dtype: DT_FLOAT
         tensor_shape {
         }
-        float_val: -0.0521404109895
+        float_val: -0.0566289797425
       }
     }
   }
@@ -527,7 +527,7 @@ node {
         dtype: DT_FLOAT
         tensor_shape {
         }
-        float_val: 0.0521404109895
+        float_val: 0.0566289797425
       }
     }
   }
@@ -556,7 +556,7 @@ node {
       list {
         shape {
           dim {
-            size: 2127
+            size: 1791
           }
           dim {
             size: 80
@@ -638,7 +638,7 @@ node {
       list {
         shape {
           dim {
-            size: 2127
+            size: 1791
           }
           dim {
             size: 80
@@ -673,7 +673,7 @@ node {
       list {
         shape {
           dim {
-            size: 2127
+            size: 1791
           }
           dim {
             size: 80
@@ -700,7 +700,7 @@ node {
       list {
         shape {
           dim {
-            size: 2127
+            size: 1791
           }
           dim {
             size: 80
@@ -726,7 +726,7 @@ node {
     value {
       shape {
         dim {
-          size: 2127
+          size: 1791
         }
         dim {
           size: 80
@@ -766,7 +766,7 @@ node {
       list {
         shape {
           dim {
-            size: 2127
+            size: 1791
           }
           dim {
             size: 80
@@ -812,7 +812,7 @@ node {
       list {
         shape {
           dim {
-            size: 2127
+            size: 1791
           }
           dim {
             size: 80
@@ -2935,6 +2935,940 @@ node {
   }
 }
 node {
+  name: "CNN_layer3/Conv/weights/Initializer/random_uniform/shape"
+  op: "Const"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@CNN_layer3/Conv/weights"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 4
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+            size: 4
+          }
+        }
+        tensor_content: "\n\000\000\000\n\000\000\000\001\000\000\000\n\000\000\000"
+      }
+    }
+  }
+}
+node {
+  name: "CNN_layer3/Conv/weights/Initializer/random_uniform/min"
+  op: "Const"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@CNN_layer3/Conv/weights"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+        }
+        float_val: -0.073854893446
+      }
+    }
+  }
+}
+node {
+  name: "CNN_layer3/Conv/weights/Initializer/random_uniform/max"
+  op: "Const"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@CNN_layer3/Conv/weights"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+        }
+        float_val: 0.073854893446
+      }
+    }
+  }
+}
+node {
+  name: "CNN_layer3/Conv/weights/Initializer/random_uniform/RandomUniform"
+  op: "RandomUniform"
+  input: "CNN_layer3/Conv/weights/Initializer/random_uniform/shape"
+  attr {
+    key: "T"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@CNN_layer3/Conv/weights"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 10
+          }
+          dim {
+            size: 10
+          }
+          dim {
+            size: 1
+          }
+          dim {
+            size: 10
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "seed"
+    value {
+      i: 0
+    }
+  }
+  attr {
+    key: "seed2"
+    value {
+      i: 0
+    }
+  }
+}
+node {
+  name: "CNN_layer3/Conv/weights/Initializer/random_uniform/sub"
+  op: "Sub"
+  input: "CNN_layer3/Conv/weights/Initializer/random_uniform/max"
+  input: "CNN_layer3/Conv/weights/Initializer/random_uniform/min"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@CNN_layer3/Conv/weights"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+}
+node {
+  name: "CNN_layer3/Conv/weights/Initializer/random_uniform/mul"
+  op: "Mul"
+  input: "CNN_layer3/Conv/weights/Initializer/random_uniform/RandomUniform"
+  input: "CNN_layer3/Conv/weights/Initializer/random_uniform/sub"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@CNN_layer3/Conv/weights"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 10
+          }
+          dim {
+            size: 10
+          }
+          dim {
+            size: 1
+          }
+          dim {
+            size: 10
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "CNN_layer3/Conv/weights/Initializer/random_uniform"
+  op: "Add"
+  input: "CNN_layer3/Conv/weights/Initializer/random_uniform/mul"
+  input: "CNN_layer3/Conv/weights/Initializer/random_uniform/min"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@CNN_layer3/Conv/weights"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 10
+          }
+          dim {
+            size: 10
+          }
+          dim {
+            size: 1
+          }
+          dim {
+            size: 10
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "CNN_layer3/Conv/weights"
+  op: "VariableV2"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@CNN_layer3/Conv/weights"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 10
+          }
+          dim {
+            size: 10
+          }
+          dim {
+            size: 1
+          }
+          dim {
+            size: 10
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "container"
+    value {
+      s: ""
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "shape"
+    value {
+      shape {
+        dim {
+          size: 10
+        }
+        dim {
+          size: 10
+        }
+        dim {
+          size: 1
+        }
+        dim {
+          size: 10
+        }
+      }
+    }
+  }
+  attr {
+    key: "shared_name"
+    value {
+      s: ""
+    }
+  }
+}
+node {
+  name: "CNN_layer3/Conv/weights/Assign"
+  op: "Assign"
+  input: "CNN_layer3/Conv/weights"
+  input: "CNN_layer3/Conv/weights/Initializer/random_uniform"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@CNN_layer3/Conv/weights"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 10
+          }
+          dim {
+            size: 10
+          }
+          dim {
+            size: 1
+          }
+          dim {
+            size: 10
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "use_locking"
+    value {
+      b: true
+    }
+  }
+  attr {
+    key: "validate_shape"
+    value {
+      b: true
+    }
+  }
+}
+node {
+  name: "CNN_layer3/Conv/weights/read"
+  op: "Identity"
+  input: "CNN_layer3/Conv/weights"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@CNN_layer3/Conv/weights"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 10
+          }
+          dim {
+            size: 10
+          }
+          dim {
+            size: 1
+          }
+          dim {
+            size: 10
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "CNN_layer3/Conv/biases/Initializer/zeros"
+  op: "Const"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@CNN_layer3/Conv/biases"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 10
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+          dim {
+            size: 10
+          }
+        }
+        float_val: 0.0
+      }
+    }
+  }
+}
+node {
+  name: "CNN_layer3/Conv/biases"
+  op: "VariableV2"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@CNN_layer3/Conv/biases"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 10
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "container"
+    value {
+      s: ""
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "shape"
+    value {
+      shape {
+        dim {
+          size: 10
+        }
+      }
+    }
+  }
+  attr {
+    key: "shared_name"
+    value {
+      s: ""
+    }
+  }
+}
+node {
+  name: "CNN_layer3/Conv/biases/Assign"
+  op: "Assign"
+  input: "CNN_layer3/Conv/biases"
+  input: "CNN_layer3/Conv/biases/Initializer/zeros"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@CNN_layer3/Conv/biases"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 10
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "use_locking"
+    value {
+      b: true
+    }
+  }
+  attr {
+    key: "validate_shape"
+    value {
+      b: true
+    }
+  }
+}
+node {
+  name: "CNN_layer3/Conv/biases/read"
+  op: "Identity"
+  input: "CNN_layer3/Conv/biases"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@CNN_layer3/Conv/biases"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 10
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "CNN_layer3/Conv/convolution/Shape"
+  op: "Const"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 4
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+            size: 4
+          }
+        }
+        tensor_content: "\n\000\000\000\n\000\000\000\001\000\000\000\n\000\000\000"
+      }
+    }
+  }
+}
+node {
+  name: "CNN_layer3/Conv/convolution/dilation_rate"
+  op: "Const"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 2
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+            size: 2
+          }
+        }
+        tensor_content: "\001\000\000\000\001\000\000\000"
+      }
+    }
+  }
+}
+node {
+  name: "CNN_layer3/Conv/convolution"
+  op: "Conv2D"
+  input: "CNN_layer1/transpose"
+  input: "CNN_layer3/Conv/weights/read"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: -1
+          }
+          dim {
+            size: 37
+          }
+          dim {
+            size: 1
+          }
+          dim {
+            size: 10
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "data_format"
+    value {
+      s: "NHWC"
+    }
+  }
+  attr {
+    key: "padding"
+    value {
+      s: "VALID"
+    }
+  }
+  attr {
+    key: "strides"
+    value {
+      list {
+        i: 1
+        i: 1
+        i: 1
+        i: 1
+      }
+    }
+  }
+  attr {
+    key: "use_cudnn_on_gpu"
+    value {
+      b: true
+    }
+  }
+}
+node {
+  name: "CNN_layer3/Conv/BiasAdd"
+  op: "BiasAdd"
+  input: "CNN_layer3/Conv/convolution"
+  input: "CNN_layer3/Conv/biases/read"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: -1
+          }
+          dim {
+            size: 37
+          }
+          dim {
+            size: 1
+          }
+          dim {
+            size: 10
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "data_format"
+    value {
+      s: "NHWC"
+    }
+  }
+}
+node {
+  name: "CNN_layer3/Conv/Relu"
+  op: "Relu"
+  input: "CNN_layer3/Conv/BiasAdd"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: -1
+          }
+          dim {
+            size: 37
+          }
+          dim {
+            size: 1
+          }
+          dim {
+            size: 10
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "CNN_layer3/Max/reduction_indices"
+  op: "Const"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+        }
+        int_val: 1
+      }
+    }
+  }
+}
+node {
+  name: "CNN_layer3/Max"
+  op: "Max"
+  input: "CNN_layer3/Conv/Relu"
+  input: "CNN_layer3/Max/reduction_indices"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "Tidx"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: -1
+          }
+          dim {
+            size: 1
+          }
+          dim {
+            size: 10
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "keep_dims"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "CNN_layer3/Squeeze"
+  op: "Squeeze"
+  input: "CNN_layer3/Max"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: -1
+          }
+          dim {
+            size: 10
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "squeeze_dims"
+    value {
+      list {
+        i: 1
+      }
+    }
+  }
+}
+node {
   name: "fully_connected/weights/Initializer/random_uniform/shape"
   op: "Const"
   attr {
@@ -3518,7 +4452,7 @@ node {
 node {
   name: "fully_connected/MatMul"
   op: "MatMul"
-  input: "CNN_layer2/Squeeze"
+  input: "CNN_layer3/Squeeze"
   input: "fully_connected/weights/read"
   attr {
     key: "T"
@@ -8744,7 +9678,7 @@ node {
 node {
   name: "OptimizeLoss/gradients/fully_connected/MatMul_grad/MatMul_1"
   op: "MatMul"
-  input: "CNN_layer2/Squeeze"
+  input: "CNN_layer3/Squeeze"
   input: "OptimizeLoss/gradients/fully_connected/BiasAdd_grad/tuple/control_dependency"
   attr {
     key: "T"
@@ -8857,9 +9791,9 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/CNN_layer2/Squeeze_grad/Shape"
+  name: "OptimizeLoss/gradients/CNN_layer3/Squeeze_grad/Shape"
   op: "Shape"
-  input: "CNN_layer2/Max"
+  input: "CNN_layer3/Max"
   attr {
     key: "T"
     value {
@@ -8886,10 +9820,10 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/CNN_layer2/Squeeze_grad/Reshape"
+  name: "OptimizeLoss/gradients/CNN_layer3/Squeeze_grad/Reshape"
   op: "Reshape"
   input: "OptimizeLoss/gradients/fully_connected/MatMul_grad/tuple/control_dependency"
-  input: "OptimizeLoss/gradients/CNN_layer2/Squeeze_grad/Shape"
+  input: "OptimizeLoss/gradients/CNN_layer3/Squeeze_grad/Shape"
   attr {
     key: "T"
     value {
@@ -8922,9 +9856,9 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/CNN_layer2/Max_grad/Shape"
+  name: "OptimizeLoss/gradients/CNN_layer3/Max_grad/Shape"
   op: "Shape"
-  input: "CNN_layer2/Conv/Relu"
+  input: "CNN_layer3/Conv/Relu"
   attr {
     key: "T"
     value {
@@ -8951,7 +9885,7 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/CNN_layer2/Max_grad/Size"
+  name: "OptimizeLoss/gradients/CNN_layer3/Max_grad/Size"
   op: "Const"
   attr {
     key: "_output_shapes"
@@ -8981,10 +9915,10 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/CNN_layer2/Max_grad/add"
+  name: "OptimizeLoss/gradients/CNN_layer3/Max_grad/add"
   op: "Add"
-  input: "CNN_layer2/Max/reduction_indices"
-  input: "OptimizeLoss/gradients/CNN_layer2/Max_grad/Size"
+  input: "CNN_layer3/Max/reduction_indices"
+  input: "OptimizeLoss/gradients/CNN_layer3/Max_grad/Size"
   attr {
     key: "T"
     value {
@@ -9002,10 +9936,10 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/CNN_layer2/Max_grad/mod"
+  name: "OptimizeLoss/gradients/CNN_layer3/Max_grad/mod"
   op: "FloorMod"
-  input: "OptimizeLoss/gradients/CNN_layer2/Max_grad/add"
-  input: "OptimizeLoss/gradients/CNN_layer2/Max_grad/Size"
+  input: "OptimizeLoss/gradients/CNN_layer3/Max_grad/add"
+  input: "OptimizeLoss/gradients/CNN_layer3/Max_grad/Size"
   attr {
     key: "T"
     value {
@@ -9023,7 +9957,7 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/CNN_layer2/Max_grad/Shape_1"
+  name: "OptimizeLoss/gradients/CNN_layer3/Max_grad/Shape_1"
   op: "Const"
   attr {
     key: "_output_shapes"
@@ -9056,7 +9990,7 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/CNN_layer2/Max_grad/range/start"
+  name: "OptimizeLoss/gradients/CNN_layer3/Max_grad/range/start"
   op: "Const"
   attr {
     key: "_output_shapes"
@@ -9086,7 +10020,7 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/CNN_layer2/Max_grad/range/delta"
+  name: "OptimizeLoss/gradients/CNN_layer3/Max_grad/range/delta"
   op: "Const"
   attr {
     key: "_output_shapes"
@@ -9116,11 +10050,11 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/CNN_layer2/Max_grad/range"
+  name: "OptimizeLoss/gradients/CNN_layer3/Max_grad/range"
   op: "Range"
-  input: "OptimizeLoss/gradients/CNN_layer2/Max_grad/range/start"
-  input: "OptimizeLoss/gradients/CNN_layer2/Max_grad/Size"
-  input: "OptimizeLoss/gradients/CNN_layer2/Max_grad/range/delta"
+  input: "OptimizeLoss/gradients/CNN_layer3/Max_grad/range/start"
+  input: "OptimizeLoss/gradients/CNN_layer3/Max_grad/Size"
+  input: "OptimizeLoss/gradients/CNN_layer3/Max_grad/range/delta"
   attr {
     key: "Tidx"
     value {
@@ -9141,7 +10075,7 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/CNN_layer2/Max_grad/Fill/value"
+  name: "OptimizeLoss/gradients/CNN_layer3/Max_grad/Fill/value"
   op: "Const"
   attr {
     key: "_output_shapes"
@@ -9171,10 +10105,10 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/CNN_layer2/Max_grad/Fill"
+  name: "OptimizeLoss/gradients/CNN_layer3/Max_grad/Fill"
   op: "Fill"
-  input: "OptimizeLoss/gradients/CNN_layer2/Max_grad/Shape_1"
-  input: "OptimizeLoss/gradients/CNN_layer2/Max_grad/Fill/value"
+  input: "OptimizeLoss/gradients/CNN_layer3/Max_grad/Shape_1"
+  input: "OptimizeLoss/gradients/CNN_layer3/Max_grad/Fill/value"
   attr {
     key: "T"
     value {
@@ -9192,12 +10126,12 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/CNN_layer2/Max_grad/DynamicStitch"
+  name: "OptimizeLoss/gradients/CNN_layer3/Max_grad/DynamicStitch"
   op: "DynamicStitch"
-  input: "OptimizeLoss/gradients/CNN_layer2/Max_grad/range"
-  input: "OptimizeLoss/gradients/CNN_layer2/Max_grad/mod"
-  input: "OptimizeLoss/gradients/CNN_layer2/Max_grad/Shape"
-  input: "OptimizeLoss/gradients/CNN_layer2/Max_grad/Fill"
+  input: "OptimizeLoss/gradients/CNN_layer3/Max_grad/range"
+  input: "OptimizeLoss/gradients/CNN_layer3/Max_grad/mod"
+  input: "OptimizeLoss/gradients/CNN_layer3/Max_grad/Shape"
+  input: "OptimizeLoss/gradients/CNN_layer3/Max_grad/Fill"
   attr {
     key: "N"
     value {
@@ -9224,10 +10158,10 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/CNN_layer2/Max_grad/Reshape"
+  name: "OptimizeLoss/gradients/CNN_layer3/Max_grad/Reshape"
   op: "Reshape"
-  input: "CNN_layer2/Max"
-  input: "OptimizeLoss/gradients/CNN_layer2/Max_grad/DynamicStitch"
+  input: "CNN_layer3/Max"
+  input: "OptimizeLoss/gradients/CNN_layer3/Max_grad/DynamicStitch"
   attr {
     key: "T"
     value {
@@ -9252,10 +10186,10 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/CNN_layer2/Max_grad/Reshape_1"
+  name: "OptimizeLoss/gradients/CNN_layer3/Max_grad/Reshape_1"
   op: "Reshape"
-  input: "OptimizeLoss/gradients/CNN_layer2/Squeeze_grad/Reshape"
-  input: "OptimizeLoss/gradients/CNN_layer2/Max_grad/DynamicStitch"
+  input: "OptimizeLoss/gradients/CNN_layer3/Squeeze_grad/Reshape"
+  input: "OptimizeLoss/gradients/CNN_layer3/Max_grad/DynamicStitch"
   attr {
     key: "T"
     value {
@@ -9280,10 +10214,10 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/CNN_layer2/Max_grad/Equal"
+  name: "OptimizeLoss/gradients/CNN_layer3/Max_grad/Equal"
   op: "Equal"
-  input: "OptimizeLoss/gradients/CNN_layer2/Max_grad/Reshape"
-  input: "CNN_layer2/Conv/Relu"
+  input: "OptimizeLoss/gradients/CNN_layer3/Max_grad/Reshape"
+  input: "CNN_layer3/Conv/Relu"
   attr {
     key: "T"
     value {
@@ -9302,9 +10236,9 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/CNN_layer2/Max_grad/Cast"
+  name: "OptimizeLoss/gradients/CNN_layer3/Max_grad/Cast"
   op: "Cast"
-  input: "OptimizeLoss/gradients/CNN_layer2/Max_grad/Equal"
+  input: "OptimizeLoss/gradients/CNN_layer3/Max_grad/Equal"
   attr {
     key: "DstT"
     value {
@@ -9329,10 +10263,10 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/CNN_layer2/Max_grad/Sum"
+  name: "OptimizeLoss/gradients/CNN_layer3/Max_grad/Sum"
   op: "Sum"
-  input: "OptimizeLoss/gradients/CNN_layer2/Max_grad/Cast"
-  input: "CNN_layer2/Max/reduction_indices"
+  input: "OptimizeLoss/gradients/CNN_layer3/Max_grad/Cast"
+  input: "CNN_layer3/Max/reduction_indices"
   attr {
     key: "T"
     value {
@@ -9363,10 +10297,10 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/CNN_layer2/Max_grad/Reshape_2"
+  name: "OptimizeLoss/gradients/CNN_layer3/Max_grad/Reshape_2"
   op: "Reshape"
-  input: "OptimizeLoss/gradients/CNN_layer2/Max_grad/Sum"
-  input: "OptimizeLoss/gradients/CNN_layer2/Max_grad/DynamicStitch"
+  input: "OptimizeLoss/gradients/CNN_layer3/Max_grad/Sum"
+  input: "OptimizeLoss/gradients/CNN_layer3/Max_grad/DynamicStitch"
   attr {
     key: "T"
     value {
@@ -9391,10 +10325,10 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/CNN_layer2/Max_grad/div"
+  name: "OptimizeLoss/gradients/CNN_layer3/Max_grad/div"
   op: "RealDiv"
-  input: "OptimizeLoss/gradients/CNN_layer2/Max_grad/Cast"
-  input: "OptimizeLoss/gradients/CNN_layer2/Max_grad/Reshape_2"
+  input: "OptimizeLoss/gradients/CNN_layer3/Max_grad/Cast"
+  input: "OptimizeLoss/gradients/CNN_layer3/Max_grad/Reshape_2"
   attr {
     key: "T"
     value {
@@ -9413,10 +10347,10 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/CNN_layer2/Max_grad/mul"
+  name: "OptimizeLoss/gradients/CNN_layer3/Max_grad/mul"
   op: "Mul"
-  input: "OptimizeLoss/gradients/CNN_layer2/Max_grad/div"
-  input: "OptimizeLoss/gradients/CNN_layer2/Max_grad/Reshape_1"
+  input: "OptimizeLoss/gradients/CNN_layer3/Max_grad/div"
+  input: "OptimizeLoss/gradients/CNN_layer3/Max_grad/Reshape_1"
   attr {
     key: "T"
     value {
@@ -9446,10 +10380,10 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/CNN_layer2/Conv/Relu_grad/ReluGrad"
+  name: "OptimizeLoss/gradients/CNN_layer3/Conv/Relu_grad/ReluGrad"
   op: "ReluGrad"
-  input: "OptimizeLoss/gradients/CNN_layer2/Max_grad/mul"
-  input: "CNN_layer2/Conv/Relu"
+  input: "OptimizeLoss/gradients/CNN_layer3/Max_grad/mul"
+  input: "CNN_layer3/Conv/Relu"
   attr {
     key: "T"
     value {
@@ -9479,9 +10413,9 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/CNN_layer2/Conv/BiasAdd_grad/BiasAddGrad"
+  name: "OptimizeLoss/gradients/CNN_layer3/Conv/BiasAdd_grad/BiasAddGrad"
   op: "BiasAddGrad"
-  input: "OptimizeLoss/gradients/CNN_layer2/Conv/Relu_grad/ReluGrad"
+  input: "OptimizeLoss/gradients/CNN_layer3/Conv/Relu_grad/ReluGrad"
   attr {
     key: "T"
     value {
@@ -9508,16 +10442,16 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/CNN_layer2/Conv/BiasAdd_grad/tuple/group_deps"
+  name: "OptimizeLoss/gradients/CNN_layer3/Conv/BiasAdd_grad/tuple/group_deps"
   op: "NoOp"
-  input: "^OptimizeLoss/gradients/CNN_layer2/Conv/Relu_grad/ReluGrad"
-  input: "^OptimizeLoss/gradients/CNN_layer2/Conv/BiasAdd_grad/BiasAddGrad"
+  input: "^OptimizeLoss/gradients/CNN_layer3/Conv/Relu_grad/ReluGrad"
+  input: "^OptimizeLoss/gradients/CNN_layer3/Conv/BiasAdd_grad/BiasAddGrad"
 }
 node {
-  name: "OptimizeLoss/gradients/CNN_layer2/Conv/BiasAdd_grad/tuple/control_dependency"
+  name: "OptimizeLoss/gradients/CNN_layer3/Conv/BiasAdd_grad/tuple/control_dependency"
   op: "Identity"
-  input: "OptimizeLoss/gradients/CNN_layer2/Conv/Relu_grad/ReluGrad"
-  input: "^OptimizeLoss/gradients/CNN_layer2/Conv/BiasAdd_grad/tuple/group_deps"
+  input: "OptimizeLoss/gradients/CNN_layer3/Conv/Relu_grad/ReluGrad"
+  input: "^OptimizeLoss/gradients/CNN_layer3/Conv/BiasAdd_grad/tuple/group_deps"
   attr {
     key: "T"
     value {
@@ -9528,7 +10462,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@OptimizeLoss/gradients/CNN_layer2/Conv/Relu_grad/ReluGrad"
+        s: "loc:@OptimizeLoss/gradients/CNN_layer3/Conv/Relu_grad/ReluGrad"
       }
     }
   }
@@ -9555,10 +10489,10 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/CNN_layer2/Conv/BiasAdd_grad/tuple/control_dependency_1"
+  name: "OptimizeLoss/gradients/CNN_layer3/Conv/BiasAdd_grad/tuple/control_dependency_1"
   op: "Identity"
-  input: "OptimizeLoss/gradients/CNN_layer2/Conv/BiasAdd_grad/BiasAddGrad"
-  input: "^OptimizeLoss/gradients/CNN_layer2/Conv/BiasAdd_grad/tuple/group_deps"
+  input: "OptimizeLoss/gradients/CNN_layer3/Conv/BiasAdd_grad/BiasAddGrad"
+  input: "^OptimizeLoss/gradients/CNN_layer3/Conv/BiasAdd_grad/tuple/group_deps"
   attr {
     key: "T"
     value {
@@ -9569,7 +10503,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@OptimizeLoss/gradients/CNN_layer2/Conv/BiasAdd_grad/BiasAddGrad"
+        s: "loc:@OptimizeLoss/gradients/CNN_layer3/Conv/BiasAdd_grad/BiasAddGrad"
       }
     }
   }
@@ -9587,7 +10521,7 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/CNN_layer2/Conv/convolution_grad/Shape"
+  name: "OptimizeLoss/gradients/CNN_layer3/Conv/convolution_grad/Shape"
   op: "Shape"
   input: "CNN_layer1/transpose"
   attr {
@@ -9616,11 +10550,11 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/CNN_layer2/Conv/convolution_grad/Conv2DBackpropInput"
+  name: "OptimizeLoss/gradients/CNN_layer3/Conv/convolution_grad/Conv2DBackpropInput"
   op: "Conv2DBackpropInput"
-  input: "OptimizeLoss/gradients/CNN_layer2/Conv/convolution_grad/Shape"
-  input: "CNN_layer2/Conv/weights/read"
-  input: "OptimizeLoss/gradients/CNN_layer2/Conv/BiasAdd_grad/tuple/control_dependency"
+  input: "OptimizeLoss/gradients/CNN_layer3/Conv/convolution_grad/Shape"
+  input: "CNN_layer3/Conv/weights/read"
+  input: "OptimizeLoss/gradients/CNN_layer3/Conv/BiasAdd_grad/tuple/control_dependency"
   attr {
     key: "T"
     value {
@@ -9679,7 +10613,7 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/CNN_layer2/Conv/convolution_grad/Shape_1"
+  name: "OptimizeLoss/gradients/CNN_layer3/Conv/convolution_grad/Shape_1"
   op: "Const"
   attr {
     key: "_output_shapes"
@@ -9715,11 +10649,11 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/CNN_layer2/Conv/convolution_grad/Conv2DBackpropFilter"
+  name: "OptimizeLoss/gradients/CNN_layer3/Conv/convolution_grad/Conv2DBackpropFilter"
   op: "Conv2DBackpropFilter"
   input: "CNN_layer1/transpose"
-  input: "OptimizeLoss/gradients/CNN_layer2/Conv/convolution_grad/Shape_1"
-  input: "OptimizeLoss/gradients/CNN_layer2/Conv/BiasAdd_grad/tuple/control_dependency"
+  input: "OptimizeLoss/gradients/CNN_layer3/Conv/convolution_grad/Shape_1"
+  input: "OptimizeLoss/gradients/CNN_layer3/Conv/BiasAdd_grad/tuple/control_dependency"
   attr {
     key: "T"
     value {
@@ -9778,16 +10712,16 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/CNN_layer2/Conv/convolution_grad/tuple/group_deps"
+  name: "OptimizeLoss/gradients/CNN_layer3/Conv/convolution_grad/tuple/group_deps"
   op: "NoOp"
-  input: "^OptimizeLoss/gradients/CNN_layer2/Conv/convolution_grad/Conv2DBackpropInput"
-  input: "^OptimizeLoss/gradients/CNN_layer2/Conv/convolution_grad/Conv2DBackpropFilter"
+  input: "^OptimizeLoss/gradients/CNN_layer3/Conv/convolution_grad/Conv2DBackpropInput"
+  input: "^OptimizeLoss/gradients/CNN_layer3/Conv/convolution_grad/Conv2DBackpropFilter"
 }
 node {
-  name: "OptimizeLoss/gradients/CNN_layer2/Conv/convolution_grad/tuple/control_dependency"
+  name: "OptimizeLoss/gradients/CNN_layer3/Conv/convolution_grad/tuple/control_dependency"
   op: "Identity"
-  input: "OptimizeLoss/gradients/CNN_layer2/Conv/convolution_grad/Conv2DBackpropInput"
-  input: "^OptimizeLoss/gradients/CNN_layer2/Conv/convolution_grad/tuple/group_deps"
+  input: "OptimizeLoss/gradients/CNN_layer3/Conv/convolution_grad/Conv2DBackpropInput"
+  input: "^OptimizeLoss/gradients/CNN_layer3/Conv/convolution_grad/tuple/group_deps"
   attr {
     key: "T"
     value {
@@ -9798,7 +10732,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@OptimizeLoss/gradients/CNN_layer2/Conv/convolution_grad/Conv2DBackpropInput"
+        s: "loc:@OptimizeLoss/gradients/CNN_layer3/Conv/convolution_grad/Conv2DBackpropInput"
       }
     }
   }
@@ -9825,10 +10759,10 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/CNN_layer2/Conv/convolution_grad/tuple/control_dependency_1"
+  name: "OptimizeLoss/gradients/CNN_layer3/Conv/convolution_grad/tuple/control_dependency_1"
   op: "Identity"
-  input: "OptimizeLoss/gradients/CNN_layer2/Conv/convolution_grad/Conv2DBackpropFilter"
-  input: "^OptimizeLoss/gradients/CNN_layer2/Conv/convolution_grad/tuple/group_deps"
+  input: "OptimizeLoss/gradients/CNN_layer3/Conv/convolution_grad/Conv2DBackpropFilter"
+  input: "^OptimizeLoss/gradients/CNN_layer3/Conv/convolution_grad/tuple/group_deps"
   attr {
     key: "T"
     value {
@@ -9839,7 +10773,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@OptimizeLoss/gradients/CNN_layer2/Conv/convolution_grad/Conv2DBackpropFilter"
+        s: "loc:@OptimizeLoss/gradients/CNN_layer3/Conv/convolution_grad/Conv2DBackpropFilter"
       }
     }
   }
@@ -9891,7 +10825,7 @@ node {
 node {
   name: "OptimizeLoss/gradients/CNN_layer1/transpose_grad/transpose"
   op: "Transpose"
-  input: "OptimizeLoss/gradients/CNN_layer2/Conv/convolution_grad/tuple/control_dependency"
+  input: "OptimizeLoss/gradients/CNN_layer3/Conv/convolution_grad/tuple/control_dependency"
   input: "OptimizeLoss/gradients/CNN_layer1/transpose_grad/InvertPermutation"
   attr {
     key: "T"
@@ -10552,7 +11486,7 @@ node {
             size: 2
           }
         }
-        tensor_content: "O\010\000\000\000\000\000\000P\000\000\000\000\000\000\000"
+        tensor_content: "\377\006\000\000\000\000\000\000P\000\000\000\000\000\000\000"
       }
     }
   }
@@ -11067,7 +12001,7 @@ node {
 node {
   name: "OptimizeLoss/global_norm/L2Loss_3"
   op: "L2Loss"
-  input: "OptimizeLoss/gradients/CNN_layer2/Conv/convolution_grad/tuple/control_dependency_1"
+  input: "OptimizeLoss/gradients/CNN_layer3/Conv/convolution_grad/tuple/control_dependency_1"
   attr {
     key: "T"
     value {
@@ -11078,7 +12012,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@OptimizeLoss/gradients/CNN_layer2/Conv/convolution_grad/Conv2DBackpropFilter"
+        s: "loc:@OptimizeLoss/gradients/CNN_layer3/Conv/convolution_grad/Conv2DBackpropFilter"
       }
     }
   }
@@ -11095,7 +12029,7 @@ node {
 node {
   name: "OptimizeLoss/global_norm/L2Loss_4"
   op: "L2Loss"
-  input: "OptimizeLoss/gradients/CNN_layer2/Conv/BiasAdd_grad/tuple/control_dependency_1"
+  input: "OptimizeLoss/gradients/CNN_layer3/Conv/BiasAdd_grad/tuple/control_dependency_1"
   attr {
     key: "T"
     value {
@@ -11106,7 +12040,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@OptimizeLoss/gradients/CNN_layer2/Conv/BiasAdd_grad/BiasAddGrad"
+        s: "loc:@OptimizeLoss/gradients/CNN_layer3/Conv/BiasAdd_grad/BiasAddGrad"
       }
     }
   }
@@ -11782,7 +12716,7 @@ node {
       list {
         shape {
           dim {
-            size: 2127
+            size: 1791
           }
           dim {
             size: 80
@@ -11804,7 +12738,7 @@ node {
         dtype: DT_FLOAT
         tensor_shape {
           dim {
-            size: 2127
+            size: 1791
           }
           dim {
             size: 80
@@ -11832,7 +12766,7 @@ node {
       list {
         shape {
           dim {
-            size: 2127
+            size: 1791
           }
           dim {
             size: 80
@@ -11858,7 +12792,7 @@ node {
     value {
       shape {
         dim {
-          size: 2127
+          size: 1791
         }
         dim {
           size: 80
@@ -11898,7 +12832,7 @@ node {
       list {
         shape {
           dim {
-            size: 2127
+            size: 1791
           }
           dim {
             size: 80
@@ -11944,7 +12878,7 @@ node {
       list {
         shape {
           dim {
-            size: 2127
+            size: 1791
           }
           dim {
             size: 80
@@ -11971,7 +12905,7 @@ node {
       list {
         shape {
           dim {
-            size: 2127
+            size: 1791
           }
           dim {
             size: 80
@@ -11993,7 +12927,7 @@ node {
         dtype: DT_FLOAT
         tensor_shape {
           dim {
-            size: 2127
+            size: 1791
           }
           dim {
             size: 80
@@ -12021,7 +12955,7 @@ node {
       list {
         shape {
           dim {
-            size: 2127
+            size: 1791
           }
           dim {
             size: 80
@@ -12047,7 +12981,7 @@ node {
     value {
       shape {
         dim {
-          size: 2127
+          size: 1791
         }
         dim {
           size: 80
@@ -12087,7 +13021,7 @@ node {
       list {
         shape {
           dim {
-            size: 2127
+            size: 1791
           }
           dim {
             size: 80
@@ -12133,7 +13067,7 @@ node {
       list {
         shape {
           dim {
-            size: 2127
+            size: 1791
           }
           dim {
             size: 80
@@ -12936,13 +13870,13 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/CNN_layer2/Conv/weights/Adam/Initializer/zeros"
+  name: "OptimizeLoss/CNN_layer3/Conv/weights/Adam/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@CNN_layer2/Conv/weights"
+        s: "loc:@CNN_layer3/Conv/weights"
       }
     }
   }
@@ -12998,13 +13932,13 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/CNN_layer2/Conv/weights/Adam"
+  name: "OptimizeLoss/CNN_layer3/Conv/weights/Adam"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@CNN_layer2/Conv/weights"
+        s: "loc:@CNN_layer3/Conv/weights"
       }
     }
   }
@@ -13068,10 +14002,10 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/CNN_layer2/Conv/weights/Adam/Assign"
+  name: "OptimizeLoss/CNN_layer3/Conv/weights/Adam/Assign"
   op: "Assign"
-  input: "OptimizeLoss/CNN_layer2/Conv/weights/Adam"
-  input: "OptimizeLoss/CNN_layer2/Conv/weights/Adam/Initializer/zeros"
+  input: "OptimizeLoss/CNN_layer3/Conv/weights/Adam"
+  input: "OptimizeLoss/CNN_layer3/Conv/weights/Adam/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -13082,7 +14016,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@CNN_layer2/Conv/weights"
+        s: "loc:@CNN_layer3/Conv/weights"
       }
     }
   }
@@ -13121,9 +14055,9 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/CNN_layer2/Conv/weights/Adam/read"
+  name: "OptimizeLoss/CNN_layer3/Conv/weights/Adam/read"
   op: "Identity"
-  input: "OptimizeLoss/CNN_layer2/Conv/weights/Adam"
+  input: "OptimizeLoss/CNN_layer3/Conv/weights/Adam"
   attr {
     key: "T"
     value {
@@ -13134,7 +14068,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@CNN_layer2/Conv/weights"
+        s: "loc:@CNN_layer3/Conv/weights"
       }
     }
   }
@@ -13161,13 +14095,13 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/CNN_layer2/Conv/weights/Adam_1/Initializer/zeros"
+  name: "OptimizeLoss/CNN_layer3/Conv/weights/Adam_1/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@CNN_layer2/Conv/weights"
+        s: "loc:@CNN_layer3/Conv/weights"
       }
     }
   }
@@ -13223,13 +14157,13 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/CNN_layer2/Conv/weights/Adam_1"
+  name: "OptimizeLoss/CNN_layer3/Conv/weights/Adam_1"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@CNN_layer2/Conv/weights"
+        s: "loc:@CNN_layer3/Conv/weights"
       }
     }
   }
@@ -13293,10 +14227,10 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/CNN_layer2/Conv/weights/Adam_1/Assign"
+  name: "OptimizeLoss/CNN_layer3/Conv/weights/Adam_1/Assign"
   op: "Assign"
-  input: "OptimizeLoss/CNN_layer2/Conv/weights/Adam_1"
-  input: "OptimizeLoss/CNN_layer2/Conv/weights/Adam_1/Initializer/zeros"
+  input: "OptimizeLoss/CNN_layer3/Conv/weights/Adam_1"
+  input: "OptimizeLoss/CNN_layer3/Conv/weights/Adam_1/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -13307,7 +14241,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@CNN_layer2/Conv/weights"
+        s: "loc:@CNN_layer3/Conv/weights"
       }
     }
   }
@@ -13346,9 +14280,9 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/CNN_layer2/Conv/weights/Adam_1/read"
+  name: "OptimizeLoss/CNN_layer3/Conv/weights/Adam_1/read"
   op: "Identity"
-  input: "OptimizeLoss/CNN_layer2/Conv/weights/Adam_1"
+  input: "OptimizeLoss/CNN_layer3/Conv/weights/Adam_1"
   attr {
     key: "T"
     value {
@@ -13359,7 +14293,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@CNN_layer2/Conv/weights"
+        s: "loc:@CNN_layer3/Conv/weights"
       }
     }
   }
@@ -13386,13 +14320,13 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/CNN_layer2/Conv/biases/Adam/Initializer/zeros"
+  name: "OptimizeLoss/CNN_layer3/Conv/biases/Adam/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@CNN_layer2/Conv/biases"
+        s: "loc:@CNN_layer3/Conv/biases"
       }
     }
   }
@@ -13430,13 +14364,13 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/CNN_layer2/Conv/biases/Adam"
+  name: "OptimizeLoss/CNN_layer3/Conv/biases/Adam"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@CNN_layer2/Conv/biases"
+        s: "loc:@CNN_layer3/Conv/biases"
       }
     }
   }
@@ -13482,10 +14416,10 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/CNN_layer2/Conv/biases/Adam/Assign"
+  name: "OptimizeLoss/CNN_layer3/Conv/biases/Adam/Assign"
   op: "Assign"
-  input: "OptimizeLoss/CNN_layer2/Conv/biases/Adam"
-  input: "OptimizeLoss/CNN_layer2/Conv/biases/Adam/Initializer/zeros"
+  input: "OptimizeLoss/CNN_layer3/Conv/biases/Adam"
+  input: "OptimizeLoss/CNN_layer3/Conv/biases/Adam/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -13496,7 +14430,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@CNN_layer2/Conv/biases"
+        s: "loc:@CNN_layer3/Conv/biases"
       }
     }
   }
@@ -13526,9 +14460,9 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/CNN_layer2/Conv/biases/Adam/read"
+  name: "OptimizeLoss/CNN_layer3/Conv/biases/Adam/read"
   op: "Identity"
-  input: "OptimizeLoss/CNN_layer2/Conv/biases/Adam"
+  input: "OptimizeLoss/CNN_layer3/Conv/biases/Adam"
   attr {
     key: "T"
     value {
@@ -13539,7 +14473,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@CNN_layer2/Conv/biases"
+        s: "loc:@CNN_layer3/Conv/biases"
       }
     }
   }
@@ -13557,13 +14491,13 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/CNN_layer2/Conv/biases/Adam_1/Initializer/zeros"
+  name: "OptimizeLoss/CNN_layer3/Conv/biases/Adam_1/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@CNN_layer2/Conv/biases"
+        s: "loc:@CNN_layer3/Conv/biases"
       }
     }
   }
@@ -13601,13 +14535,13 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/CNN_layer2/Conv/biases/Adam_1"
+  name: "OptimizeLoss/CNN_layer3/Conv/biases/Adam_1"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@CNN_layer2/Conv/biases"
+        s: "loc:@CNN_layer3/Conv/biases"
       }
     }
   }
@@ -13653,10 +14587,10 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/CNN_layer2/Conv/biases/Adam_1/Assign"
+  name: "OptimizeLoss/CNN_layer3/Conv/biases/Adam_1/Assign"
   op: "Assign"
-  input: "OptimizeLoss/CNN_layer2/Conv/biases/Adam_1"
-  input: "OptimizeLoss/CNN_layer2/Conv/biases/Adam_1/Initializer/zeros"
+  input: "OptimizeLoss/CNN_layer3/Conv/biases/Adam_1"
+  input: "OptimizeLoss/CNN_layer3/Conv/biases/Adam_1/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -13667,7 +14601,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@CNN_layer2/Conv/biases"
+        s: "loc:@CNN_layer3/Conv/biases"
       }
     }
   }
@@ -13697,9 +14631,9 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/CNN_layer2/Conv/biases/Adam_1/read"
+  name: "OptimizeLoss/CNN_layer3/Conv/biases/Adam_1/read"
   op: "Identity"
-  input: "OptimizeLoss/CNN_layer2/Conv/biases/Adam_1"
+  input: "OptimizeLoss/CNN_layer3/Conv/biases/Adam_1"
   attr {
     key: "T"
     value {
@@ -13710,7 +14644,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@CNN_layer2/Conv/biases"
+        s: "loc:@CNN_layer3/Conv/biases"
       }
     }
   }
@@ -15204,7 +16138,7 @@ node {
       list {
         shape {
           dim {
-            size: 2127
+            size: 1791
           }
           dim {
             size: 80
@@ -15239,7 +16173,7 @@ node {
       list {
         shape {
           dim {
-            size: 2127
+            size: 1791
           }
           dim {
             size: 80
@@ -15294,7 +16228,7 @@ node {
       list {
         shape {
           dim {
-            size: 2127
+            size: 1791
           }
           dim {
             size: 80
@@ -15472,7 +16406,7 @@ node {
       list {
         shape {
           dim {
-            size: 2127
+            size: 1791
           }
           dim {
             size: 80
@@ -15507,7 +16441,7 @@ node {
       list {
         shape {
           dim {
-            size: 2127
+            size: 1791
           }
           dim {
             size: 80
@@ -15562,7 +16496,7 @@ node {
       list {
         shape {
           dim {
-            size: 2127
+            size: 1791
           }
           dim {
             size: 80
@@ -15602,7 +16536,7 @@ node {
       list {
         shape {
           dim {
-            size: 2127
+            size: 1791
           }
           dim {
             size: 80
@@ -15637,7 +16571,7 @@ node {
       list {
         shape {
           dim {
-            size: 2127
+            size: 1791
           }
           dim {
             size: 80
@@ -15672,7 +16606,7 @@ node {
       list {
         shape {
           dim {
-            size: 2127
+            size: 1791
           }
           dim {
             size: 80
@@ -15707,7 +16641,7 @@ node {
       list {
         shape {
           dim {
-            size: 2127
+            size: 1791
           }
           dim {
             size: 80
@@ -15742,7 +16676,7 @@ node {
       list {
         shape {
           dim {
-            size: 2127
+            size: 1791
           }
           dim {
             size: 80
@@ -15887,18 +16821,18 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/train/update_CNN_layer2/Conv/weights/ApplyAdam"
+  name: "OptimizeLoss/train/update_CNN_layer3/Conv/weights/ApplyAdam"
   op: "ApplyAdam"
-  input: "CNN_layer2/Conv/weights"
-  input: "OptimizeLoss/CNN_layer2/Conv/weights/Adam"
-  input: "OptimizeLoss/CNN_layer2/Conv/weights/Adam_1"
+  input: "CNN_layer3/Conv/weights"
+  input: "OptimizeLoss/CNN_layer3/Conv/weights/Adam"
+  input: "OptimizeLoss/CNN_layer3/Conv/weights/Adam_1"
   input: "OptimizeLoss/beta1_power/read"
   input: "OptimizeLoss/beta2_power/read"
   input: "OptimizeLoss/learning_rate/read"
   input: "OptimizeLoss/train/beta1"
   input: "OptimizeLoss/train/beta2"
   input: "OptimizeLoss/train/epsilon"
-  input: "OptimizeLoss/gradients/CNN_layer2/Conv/convolution_grad/tuple/control_dependency_1"
+  input: "OptimizeLoss/gradients/CNN_layer3/Conv/convolution_grad/tuple/control_dependency_1"
   attr {
     key: "T"
     value {
@@ -15909,7 +16843,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@CNN_layer2/Conv/weights"
+        s: "loc:@CNN_layer3/Conv/weights"
       }
     }
   }
@@ -15948,18 +16882,18 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/train/update_CNN_layer2/Conv/biases/ApplyAdam"
+  name: "OptimizeLoss/train/update_CNN_layer3/Conv/biases/ApplyAdam"
   op: "ApplyAdam"
-  input: "CNN_layer2/Conv/biases"
-  input: "OptimizeLoss/CNN_layer2/Conv/biases/Adam"
-  input: "OptimizeLoss/CNN_layer2/Conv/biases/Adam_1"
+  input: "CNN_layer3/Conv/biases"
+  input: "OptimizeLoss/CNN_layer3/Conv/biases/Adam"
+  input: "OptimizeLoss/CNN_layer3/Conv/biases/Adam_1"
   input: "OptimizeLoss/beta1_power/read"
   input: "OptimizeLoss/beta2_power/read"
   input: "OptimizeLoss/learning_rate/read"
   input: "OptimizeLoss/train/beta1"
   input: "OptimizeLoss/train/beta2"
   input: "OptimizeLoss/train/epsilon"
-  input: "OptimizeLoss/gradients/CNN_layer2/Conv/BiasAdd_grad/tuple/control_dependency_1"
+  input: "OptimizeLoss/gradients/CNN_layer3/Conv/BiasAdd_grad/tuple/control_dependency_1"
   attr {
     key: "T"
     value {
@@ -15970,7 +16904,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@CNN_layer2/Conv/biases"
+        s: "loc:@CNN_layer3/Conv/biases"
       }
     }
   }
@@ -16114,8 +17048,8 @@ node {
   input: "^OptimizeLoss/train/update_words/embeddings/group_deps"
   input: "^OptimizeLoss/train/update_CNN_layer1/Conv/weights/ApplyAdam"
   input: "^OptimizeLoss/train/update_CNN_layer1/Conv/biases/ApplyAdam"
-  input: "^OptimizeLoss/train/update_CNN_layer2/Conv/weights/ApplyAdam"
-  input: "^OptimizeLoss/train/update_CNN_layer2/Conv/biases/ApplyAdam"
+  input: "^OptimizeLoss/train/update_CNN_layer3/Conv/weights/ApplyAdam"
+  input: "^OptimizeLoss/train/update_CNN_layer3/Conv/biases/ApplyAdam"
   input: "^OptimizeLoss/train/update_fully_connected/weights/ApplyAdam"
   input: "^OptimizeLoss/train/update_fully_connected/biases/ApplyAdam"
   attr {
@@ -16191,8 +17125,8 @@ node {
   input: "^OptimizeLoss/train/update_words/embeddings/group_deps"
   input: "^OptimizeLoss/train/update_CNN_layer1/Conv/weights/ApplyAdam"
   input: "^OptimizeLoss/train/update_CNN_layer1/Conv/biases/ApplyAdam"
-  input: "^OptimizeLoss/train/update_CNN_layer2/Conv/weights/ApplyAdam"
-  input: "^OptimizeLoss/train/update_CNN_layer2/Conv/biases/ApplyAdam"
+  input: "^OptimizeLoss/train/update_CNN_layer3/Conv/weights/ApplyAdam"
+  input: "^OptimizeLoss/train/update_CNN_layer3/Conv/biases/ApplyAdam"
   input: "^OptimizeLoss/train/update_fully_connected/weights/ApplyAdam"
   input: "^OptimizeLoss/train/update_fully_connected/biases/ApplyAdam"
   attr {
@@ -16266,8 +17200,8 @@ node {
   input: "^OptimizeLoss/train/update_words/embeddings/group_deps"
   input: "^OptimizeLoss/train/update_CNN_layer1/Conv/weights/ApplyAdam"
   input: "^OptimizeLoss/train/update_CNN_layer1/Conv/biases/ApplyAdam"
-  input: "^OptimizeLoss/train/update_CNN_layer2/Conv/weights/ApplyAdam"
-  input: "^OptimizeLoss/train/update_CNN_layer2/Conv/biases/ApplyAdam"
+  input: "^OptimizeLoss/train/update_CNN_layer3/Conv/weights/ApplyAdam"
+  input: "^OptimizeLoss/train/update_CNN_layer3/Conv/biases/ApplyAdam"
   input: "^OptimizeLoss/train/update_fully_connected/weights/ApplyAdam"
   input: "^OptimizeLoss/train/update_fully_connected/biases/ApplyAdam"
   input: "^OptimizeLoss/train/Assign"
@@ -16477,6 +17411,8 @@ node {
   input: "^CNN_layer1/Conv/biases/Assign"
   input: "^CNN_layer2/Conv/weights/Assign"
   input: "^CNN_layer2/Conv/biases/Assign"
+  input: "^CNN_layer3/Conv/weights/Assign"
+  input: "^CNN_layer3/Conv/biases/Assign"
   input: "^fully_connected/weights/Assign"
   input: "^fully_connected/biases/Assign"
   input: "^OptimizeLoss/learning_rate/Assign"
@@ -16488,10 +17424,10 @@ node {
   input: "^OptimizeLoss/CNN_layer1/Conv/weights/Adam_1/Assign"
   input: "^OptimizeLoss/CNN_layer1/Conv/biases/Adam/Assign"
   input: "^OptimizeLoss/CNN_layer1/Conv/biases/Adam_1/Assign"
-  input: "^OptimizeLoss/CNN_layer2/Conv/weights/Adam/Assign"
-  input: "^OptimizeLoss/CNN_layer2/Conv/weights/Adam_1/Assign"
-  input: "^OptimizeLoss/CNN_layer2/Conv/biases/Adam/Assign"
-  input: "^OptimizeLoss/CNN_layer2/Conv/biases/Adam_1/Assign"
+  input: "^OptimizeLoss/CNN_layer3/Conv/weights/Adam/Assign"
+  input: "^OptimizeLoss/CNN_layer3/Conv/weights/Adam_1/Assign"
+  input: "^OptimizeLoss/CNN_layer3/Conv/biases/Adam/Assign"
+  input: "^OptimizeLoss/CNN_layer3/Conv/biases/Adam_1/Assign"
   input: "^OptimizeLoss/fully_connected/weights/Adam/Assign"
   input: "^OptimizeLoss/fully_connected/weights/Adam_1/Assign"
   input: "^OptimizeLoss/fully_connected/biases/Adam/Assign"
@@ -16678,6 +17614,62 @@ node {
 node {
   name: "report_uninitialized_variables/IsVariableInitialized_6"
   op: "IsVariableInitialized"
+  input: "CNN_layer3/Conv/weights"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@CNN_layer3/Conv/weights"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "report_uninitialized_variables/IsVariableInitialized_7"
+  op: "IsVariableInitialized"
+  input: "CNN_layer3/Conv/biases"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@CNN_layer3/Conv/biases"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "report_uninitialized_variables/IsVariableInitialized_8"
+  op: "IsVariableInitialized"
   input: "fully_connected/weights"
   attr {
     key: "_class"
@@ -16704,7 +17696,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables/IsVariableInitialized_7"
+  name: "report_uninitialized_variables/IsVariableInitialized_9"
   op: "IsVariableInitialized"
   input: "fully_connected/biases"
   attr {
@@ -16732,7 +17724,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables/IsVariableInitialized_8"
+  name: "report_uninitialized_variables/IsVariableInitialized_10"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/learning_rate"
   attr {
@@ -16760,7 +17752,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables/IsVariableInitialized_9"
+  name: "report_uninitialized_variables/IsVariableInitialized_11"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/beta1_power"
   attr {
@@ -16788,7 +17780,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables/IsVariableInitialized_10"
+  name: "report_uninitialized_variables/IsVariableInitialized_12"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/beta2_power"
   attr {
@@ -16816,7 +17808,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables/IsVariableInitialized_11"
+  name: "report_uninitialized_variables/IsVariableInitialized_13"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/words/embeddings/Adam"
   attr {
@@ -16844,7 +17836,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables/IsVariableInitialized_12"
+  name: "report_uninitialized_variables/IsVariableInitialized_14"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/words/embeddings/Adam_1"
   attr {
@@ -16872,7 +17864,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables/IsVariableInitialized_13"
+  name: "report_uninitialized_variables/IsVariableInitialized_15"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/CNN_layer1/Conv/weights/Adam"
   attr {
@@ -16900,7 +17892,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables/IsVariableInitialized_14"
+  name: "report_uninitialized_variables/IsVariableInitialized_16"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/CNN_layer1/Conv/weights/Adam_1"
   attr {
@@ -16928,7 +17920,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables/IsVariableInitialized_15"
+  name: "report_uninitialized_variables/IsVariableInitialized_17"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/CNN_layer1/Conv/biases/Adam"
   attr {
@@ -16956,7 +17948,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables/IsVariableInitialized_16"
+  name: "report_uninitialized_variables/IsVariableInitialized_18"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/CNN_layer1/Conv/biases/Adam_1"
   attr {
@@ -16984,70 +17976,14 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables/IsVariableInitialized_17"
-  op: "IsVariableInitialized"
-  input: "OptimizeLoss/CNN_layer2/Conv/weights/Adam"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@CNN_layer2/Conv/weights"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
-  name: "report_uninitialized_variables/IsVariableInitialized_18"
-  op: "IsVariableInitialized"
-  input: "OptimizeLoss/CNN_layer2/Conv/weights/Adam_1"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@CNN_layer2/Conv/weights"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
   name: "report_uninitialized_variables/IsVariableInitialized_19"
   op: "IsVariableInitialized"
-  input: "OptimizeLoss/CNN_layer2/Conv/biases/Adam"
+  input: "OptimizeLoss/CNN_layer3/Conv/weights/Adam"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@CNN_layer2/Conv/biases"
+        s: "loc:@CNN_layer3/Conv/weights"
       }
     }
   }
@@ -17070,12 +18006,12 @@ node {
 node {
   name: "report_uninitialized_variables/IsVariableInitialized_20"
   op: "IsVariableInitialized"
-  input: "OptimizeLoss/CNN_layer2/Conv/biases/Adam_1"
+  input: "OptimizeLoss/CNN_layer3/Conv/weights/Adam_1"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@CNN_layer2/Conv/biases"
+        s: "loc:@CNN_layer3/Conv/weights"
       }
     }
   }
@@ -17097,6 +18033,62 @@ node {
 }
 node {
   name: "report_uninitialized_variables/IsVariableInitialized_21"
+  op: "IsVariableInitialized"
+  input: "OptimizeLoss/CNN_layer3/Conv/biases/Adam"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@CNN_layer3/Conv/biases"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "report_uninitialized_variables/IsVariableInitialized_22"
+  op: "IsVariableInitialized"
+  input: "OptimizeLoss/CNN_layer3/Conv/biases/Adam_1"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@CNN_layer3/Conv/biases"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "report_uninitialized_variables/IsVariableInitialized_23"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/fully_connected/weights/Adam"
   attr {
@@ -17124,7 +18116,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables/IsVariableInitialized_22"
+  name: "report_uninitialized_variables/IsVariableInitialized_24"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/fully_connected/weights/Adam_1"
   attr {
@@ -17152,7 +18144,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables/IsVariableInitialized_23"
+  name: "report_uninitialized_variables/IsVariableInitialized_25"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/fully_connected/biases/Adam"
   attr {
@@ -17180,7 +18172,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables/IsVariableInitialized_24"
+  name: "report_uninitialized_variables/IsVariableInitialized_26"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/fully_connected/biases/Adam_1"
   attr {
@@ -17235,11 +18227,13 @@ node {
   input: "report_uninitialized_variables/IsVariableInitialized_22"
   input: "report_uninitialized_variables/IsVariableInitialized_23"
   input: "report_uninitialized_variables/IsVariableInitialized_24"
+  input: "report_uninitialized_variables/IsVariableInitialized_25"
+  input: "report_uninitialized_variables/IsVariableInitialized_26"
   device: "/device:CPU:0"
   attr {
     key: "N"
     value {
-      i: 25
+      i: 27
     }
   }
   attr {
@@ -17254,7 +18248,7 @@ node {
       list {
         shape {
           dim {
-            size: 25
+            size: 27
           }
         }
       }
@@ -17278,7 +18272,7 @@ node {
       list {
         shape {
           dim {
-            size: 25
+            size: 27
           }
         }
       }
@@ -17295,7 +18289,7 @@ node {
       list {
         shape {
           dim {
-            size: 25
+            size: 27
           }
         }
       }
@@ -17314,7 +18308,7 @@ node {
         dtype: DT_STRING
         tensor_shape {
           dim {
-            size: 25
+            size: 27
           }
         }
         string_val: "global_step"
@@ -17323,6 +18317,8 @@ node {
         string_val: "CNN_layer1/Conv/biases"
         string_val: "CNN_layer2/Conv/weights"
         string_val: "CNN_layer2/Conv/biases"
+        string_val: "CNN_layer3/Conv/weights"
+        string_val: "CNN_layer3/Conv/biases"
         string_val: "fully_connected/weights"
         string_val: "fully_connected/biases"
         string_val: "OptimizeLoss/learning_rate"
@@ -17334,10 +18330,10 @@ node {
         string_val: "OptimizeLoss/CNN_layer1/Conv/weights/Adam_1"
         string_val: "OptimizeLoss/CNN_layer1/Conv/biases/Adam"
         string_val: "OptimizeLoss/CNN_layer1/Conv/biases/Adam_1"
-        string_val: "OptimizeLoss/CNN_layer2/Conv/weights/Adam"
-        string_val: "OptimizeLoss/CNN_layer2/Conv/weights/Adam_1"
-        string_val: "OptimizeLoss/CNN_layer2/Conv/biases/Adam"
-        string_val: "OptimizeLoss/CNN_layer2/Conv/biases/Adam_1"
+        string_val: "OptimizeLoss/CNN_layer3/Conv/weights/Adam"
+        string_val: "OptimizeLoss/CNN_layer3/Conv/weights/Adam_1"
+        string_val: "OptimizeLoss/CNN_layer3/Conv/biases/Adam"
+        string_val: "OptimizeLoss/CNN_layer3/Conv/biases/Adam_1"
         string_val: "OptimizeLoss/fully_connected/weights/Adam"
         string_val: "OptimizeLoss/fully_connected/weights/Adam_1"
         string_val: "OptimizeLoss/fully_connected/biases/Adam"
@@ -17378,7 +18374,7 @@ node {
             size: 1
           }
         }
-        int_val: 25
+        int_val: 27
       }
     }
   }
@@ -17660,7 +18656,7 @@ node {
             size: 1
           }
         }
-        int_val: 25
+        int_val: 27
       }
     }
   }
@@ -17967,7 +18963,7 @@ node {
       list {
         shape {
           dim {
-            size: 25
+            size: 27
           }
         }
       }
@@ -18035,7 +19031,7 @@ node {
       list {
         shape {
           dim {
-            size: 25
+            size: 27
           }
         }
       }
@@ -18404,6 +19400,62 @@ node {
 node {
   name: "report_uninitialized_variables_1/IsVariableInitialized_6"
   op: "IsVariableInitialized"
+  input: "CNN_layer3/Conv/weights"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@CNN_layer3/Conv/weights"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "report_uninitialized_variables_1/IsVariableInitialized_7"
+  op: "IsVariableInitialized"
+  input: "CNN_layer3/Conv/biases"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@CNN_layer3/Conv/biases"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "report_uninitialized_variables_1/IsVariableInitialized_8"
+  op: "IsVariableInitialized"
   input: "fully_connected/weights"
   attr {
     key: "_class"
@@ -18430,7 +19482,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables_1/IsVariableInitialized_7"
+  name: "report_uninitialized_variables_1/IsVariableInitialized_9"
   op: "IsVariableInitialized"
   input: "fully_connected/biases"
   attr {
@@ -18458,7 +19510,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables_1/IsVariableInitialized_8"
+  name: "report_uninitialized_variables_1/IsVariableInitialized_10"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/learning_rate"
   attr {
@@ -18486,7 +19538,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables_1/IsVariableInitialized_9"
+  name: "report_uninitialized_variables_1/IsVariableInitialized_11"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/beta1_power"
   attr {
@@ -18514,7 +19566,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables_1/IsVariableInitialized_10"
+  name: "report_uninitialized_variables_1/IsVariableInitialized_12"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/beta2_power"
   attr {
@@ -18542,7 +19594,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables_1/IsVariableInitialized_11"
+  name: "report_uninitialized_variables_1/IsVariableInitialized_13"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/words/embeddings/Adam"
   attr {
@@ -18570,7 +19622,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables_1/IsVariableInitialized_12"
+  name: "report_uninitialized_variables_1/IsVariableInitialized_14"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/words/embeddings/Adam_1"
   attr {
@@ -18598,7 +19650,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables_1/IsVariableInitialized_13"
+  name: "report_uninitialized_variables_1/IsVariableInitialized_15"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/CNN_layer1/Conv/weights/Adam"
   attr {
@@ -18626,7 +19678,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables_1/IsVariableInitialized_14"
+  name: "report_uninitialized_variables_1/IsVariableInitialized_16"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/CNN_layer1/Conv/weights/Adam_1"
   attr {
@@ -18654,7 +19706,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables_1/IsVariableInitialized_15"
+  name: "report_uninitialized_variables_1/IsVariableInitialized_17"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/CNN_layer1/Conv/biases/Adam"
   attr {
@@ -18682,7 +19734,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables_1/IsVariableInitialized_16"
+  name: "report_uninitialized_variables_1/IsVariableInitialized_18"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/CNN_layer1/Conv/biases/Adam_1"
   attr {
@@ -18710,70 +19762,14 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables_1/IsVariableInitialized_17"
-  op: "IsVariableInitialized"
-  input: "OptimizeLoss/CNN_layer2/Conv/weights/Adam"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@CNN_layer2/Conv/weights"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
-  name: "report_uninitialized_variables_1/IsVariableInitialized_18"
-  op: "IsVariableInitialized"
-  input: "OptimizeLoss/CNN_layer2/Conv/weights/Adam_1"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@CNN_layer2/Conv/weights"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
   name: "report_uninitialized_variables_1/IsVariableInitialized_19"
   op: "IsVariableInitialized"
-  input: "OptimizeLoss/CNN_layer2/Conv/biases/Adam"
+  input: "OptimizeLoss/CNN_layer3/Conv/weights/Adam"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@CNN_layer2/Conv/biases"
+        s: "loc:@CNN_layer3/Conv/weights"
       }
     }
   }
@@ -18796,12 +19792,12 @@ node {
 node {
   name: "report_uninitialized_variables_1/IsVariableInitialized_20"
   op: "IsVariableInitialized"
-  input: "OptimizeLoss/CNN_layer2/Conv/biases/Adam_1"
+  input: "OptimizeLoss/CNN_layer3/Conv/weights/Adam_1"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@CNN_layer2/Conv/biases"
+        s: "loc:@CNN_layer3/Conv/weights"
       }
     }
   }
@@ -18823,6 +19819,62 @@ node {
 }
 node {
   name: "report_uninitialized_variables_1/IsVariableInitialized_21"
+  op: "IsVariableInitialized"
+  input: "OptimizeLoss/CNN_layer3/Conv/biases/Adam"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@CNN_layer3/Conv/biases"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "report_uninitialized_variables_1/IsVariableInitialized_22"
+  op: "IsVariableInitialized"
+  input: "OptimizeLoss/CNN_layer3/Conv/biases/Adam_1"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@CNN_layer3/Conv/biases"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "report_uninitialized_variables_1/IsVariableInitialized_23"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/fully_connected/weights/Adam"
   attr {
@@ -18850,7 +19902,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables_1/IsVariableInitialized_22"
+  name: "report_uninitialized_variables_1/IsVariableInitialized_24"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/fully_connected/weights/Adam_1"
   attr {
@@ -18878,7 +19930,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables_1/IsVariableInitialized_23"
+  name: "report_uninitialized_variables_1/IsVariableInitialized_25"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/fully_connected/biases/Adam"
   attr {
@@ -18906,7 +19958,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables_1/IsVariableInitialized_24"
+  name: "report_uninitialized_variables_1/IsVariableInitialized_26"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/fully_connected/biases/Adam_1"
   attr {
@@ -18961,11 +20013,13 @@ node {
   input: "report_uninitialized_variables_1/IsVariableInitialized_22"
   input: "report_uninitialized_variables_1/IsVariableInitialized_23"
   input: "report_uninitialized_variables_1/IsVariableInitialized_24"
+  input: "report_uninitialized_variables_1/IsVariableInitialized_25"
+  input: "report_uninitialized_variables_1/IsVariableInitialized_26"
   device: "/device:CPU:0"
   attr {
     key: "N"
     value {
-      i: 25
+      i: 27
     }
   }
   attr {
@@ -18980,7 +20034,7 @@ node {
       list {
         shape {
           dim {
-            size: 25
+            size: 27
           }
         }
       }
@@ -19004,7 +20058,7 @@ node {
       list {
         shape {
           dim {
-            size: 25
+            size: 27
           }
         }
       }
@@ -19021,7 +20075,7 @@ node {
       list {
         shape {
           dim {
-            size: 25
+            size: 27
           }
         }
       }
@@ -19040,7 +20094,7 @@ node {
         dtype: DT_STRING
         tensor_shape {
           dim {
-            size: 25
+            size: 27
           }
         }
         string_val: "global_step"
@@ -19049,6 +20103,8 @@ node {
         string_val: "CNN_layer1/Conv/biases"
         string_val: "CNN_layer2/Conv/weights"
         string_val: "CNN_layer2/Conv/biases"
+        string_val: "CNN_layer3/Conv/weights"
+        string_val: "CNN_layer3/Conv/biases"
         string_val: "fully_connected/weights"
         string_val: "fully_connected/biases"
         string_val: "OptimizeLoss/learning_rate"
@@ -19060,10 +20116,10 @@ node {
         string_val: "OptimizeLoss/CNN_layer1/Conv/weights/Adam_1"
         string_val: "OptimizeLoss/CNN_layer1/Conv/biases/Adam"
         string_val: "OptimizeLoss/CNN_layer1/Conv/biases/Adam_1"
-        string_val: "OptimizeLoss/CNN_layer2/Conv/weights/Adam"
-        string_val: "OptimizeLoss/CNN_layer2/Conv/weights/Adam_1"
-        string_val: "OptimizeLoss/CNN_layer2/Conv/biases/Adam"
-        string_val: "OptimizeLoss/CNN_layer2/Conv/biases/Adam_1"
+        string_val: "OptimizeLoss/CNN_layer3/Conv/weights/Adam"
+        string_val: "OptimizeLoss/CNN_layer3/Conv/weights/Adam_1"
+        string_val: "OptimizeLoss/CNN_layer3/Conv/biases/Adam"
+        string_val: "OptimizeLoss/CNN_layer3/Conv/biases/Adam_1"
         string_val: "OptimizeLoss/fully_connected/weights/Adam"
         string_val: "OptimizeLoss/fully_connected/weights/Adam_1"
         string_val: "OptimizeLoss/fully_connected/biases/Adam"
@@ -19104,7 +20160,7 @@ node {
             size: 1
           }
         }
-        int_val: 25
+        int_val: 27
       }
     }
   }
@@ -19386,7 +20442,7 @@ node {
             size: 1
           }
         }
-        int_val: 25
+        int_val: 27
       }
     }
   }
@@ -19693,7 +20749,7 @@ node {
       list {
         shape {
           dim {
-            size: 25
+            size: 27
           }
         }
       }
@@ -19761,7 +20817,7 @@ node {
       list {
         shape {
           dim {
-            size: 25
+            size: 27
           }
         }
       }
@@ -19948,7 +21004,7 @@ node {
         dtype: DT_STRING
         tensor_shape {
         }
-        string_val: "_temp_e4cda1c1f0444ea894e54b798f765faa/part"
+        string_val: "_temp_7292c7a3e47a4a1eb327cb27cde43de3/part"
       }
     }
   }
@@ -20065,7 +21121,7 @@ node {
       list {
         shape {
           dim {
-            size: 25
+            size: 27
           }
         }
       }
@@ -20084,21 +21140,23 @@ node {
         dtype: DT_STRING
         tensor_shape {
           dim {
-            size: 25
+            size: 27
           }
         }
         string_val: "CNN_layer1/Conv/biases"
         string_val: "CNN_layer1/Conv/weights"
         string_val: "CNN_layer2/Conv/biases"
         string_val: "CNN_layer2/Conv/weights"
+        string_val: "CNN_layer3/Conv/biases"
+        string_val: "CNN_layer3/Conv/weights"
         string_val: "OptimizeLoss/CNN_layer1/Conv/biases/Adam"
         string_val: "OptimizeLoss/CNN_layer1/Conv/biases/Adam_1"
         string_val: "OptimizeLoss/CNN_layer1/Conv/weights/Adam"
         string_val: "OptimizeLoss/CNN_layer1/Conv/weights/Adam_1"
-        string_val: "OptimizeLoss/CNN_layer2/Conv/biases/Adam"
-        string_val: "OptimizeLoss/CNN_layer2/Conv/biases/Adam_1"
-        string_val: "OptimizeLoss/CNN_layer2/Conv/weights/Adam"
-        string_val: "OptimizeLoss/CNN_layer2/Conv/weights/Adam_1"
+        string_val: "OptimizeLoss/CNN_layer3/Conv/biases/Adam"
+        string_val: "OptimizeLoss/CNN_layer3/Conv/biases/Adam_1"
+        string_val: "OptimizeLoss/CNN_layer3/Conv/weights/Adam"
+        string_val: "OptimizeLoss/CNN_layer3/Conv/weights/Adam_1"
         string_val: "OptimizeLoss/beta1_power"
         string_val: "OptimizeLoss/beta2_power"
         string_val: "OptimizeLoss/fully_connected/biases/Adam"
@@ -20125,7 +21183,7 @@ node {
       list {
         shape {
           dim {
-            size: 25
+            size: 27
           }
         }
       }
@@ -20144,9 +21202,11 @@ node {
         dtype: DT_STRING
         tensor_shape {
           dim {
-            size: 25
+            size: 27
           }
         }
+        string_val: ""
+        string_val: ""
         string_val: ""
         string_val: ""
         string_val: ""
@@ -20186,14 +21246,16 @@ node {
   input: "CNN_layer1/Conv/weights"
   input: "CNN_layer2/Conv/biases"
   input: "CNN_layer2/Conv/weights"
+  input: "CNN_layer3/Conv/biases"
+  input: "CNN_layer3/Conv/weights"
   input: "OptimizeLoss/CNN_layer1/Conv/biases/Adam"
   input: "OptimizeLoss/CNN_layer1/Conv/biases/Adam_1"
   input: "OptimizeLoss/CNN_layer1/Conv/weights/Adam"
   input: "OptimizeLoss/CNN_layer1/Conv/weights/Adam_1"
-  input: "OptimizeLoss/CNN_layer2/Conv/biases/Adam"
-  input: "OptimizeLoss/CNN_layer2/Conv/biases/Adam_1"
-  input: "OptimizeLoss/CNN_layer2/Conv/weights/Adam"
-  input: "OptimizeLoss/CNN_layer2/Conv/weights/Adam_1"
+  input: "OptimizeLoss/CNN_layer3/Conv/biases/Adam"
+  input: "OptimizeLoss/CNN_layer3/Conv/biases/Adam_1"
+  input: "OptimizeLoss/CNN_layer3/Conv/weights/Adam"
+  input: "OptimizeLoss/CNN_layer3/Conv/weights/Adam_1"
   input: "OptimizeLoss/beta1_power"
   input: "OptimizeLoss/beta2_power"
   input: "OptimizeLoss/fully_connected/biases/Adam"
@@ -20211,6 +21273,8 @@ node {
     key: "dtypes"
     value {
       list {
+        type: DT_FLOAT
+        type: DT_FLOAT
         type: DT_FLOAT
         type: DT_FLOAT
         type: DT_FLOAT
@@ -20952,7 +22016,7 @@ node {
             size: 1
           }
         }
-        string_val: "OptimizeLoss/CNN_layer1/Conv/biases/Adam"
+        string_val: "CNN_layer3/Conv/biases"
       }
     }
   }
@@ -21021,7 +22085,7 @@ node {
 node {
   name: "save/Assign_4"
   op: "Assign"
-  input: "OptimizeLoss/CNN_layer1/Conv/biases/Adam"
+  input: "CNN_layer3/Conv/biases"
   input: "save/RestoreV2_4"
   attr {
     key: "T"
@@ -21033,7 +22097,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@CNN_layer1/Conv/biases"
+        s: "loc:@CNN_layer3/Conv/biases"
       }
     }
   }
@@ -21093,7 +22157,7 @@ node {
             size: 1
           }
         }
-        string_val: "OptimizeLoss/CNN_layer1/Conv/biases/Adam_1"
+        string_val: "CNN_layer3/Conv/weights"
       }
     }
   }
@@ -21162,7 +22226,7 @@ node {
 node {
   name: "save/Assign_5"
   op: "Assign"
-  input: "OptimizeLoss/CNN_layer1/Conv/biases/Adam_1"
+  input: "CNN_layer3/Conv/weights"
   input: "save/RestoreV2_5"
   attr {
     key: "T"
@@ -21174,7 +22238,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@CNN_layer1/Conv/biases"
+        s: "loc:@CNN_layer3/Conv/weights"
       }
     }
   }
@@ -21183,6 +22247,15 @@ node {
     value {
       list {
         shape {
+          dim {
+            size: 10
+          }
+          dim {
+            size: 10
+          }
+          dim {
+            size: 1
+          }
           dim {
             size: 10
           }
@@ -21234,7 +22307,7 @@ node {
             size: 1
           }
         }
-        string_val: "OptimizeLoss/CNN_layer1/Conv/weights/Adam"
+        string_val: "OptimizeLoss/CNN_layer1/Conv/biases/Adam"
       }
     }
   }
@@ -21303,7 +22376,7 @@ node {
 node {
   name: "save/Assign_6"
   op: "Assign"
-  input: "OptimizeLoss/CNN_layer1/Conv/weights/Adam"
+  input: "OptimizeLoss/CNN_layer1/Conv/biases/Adam"
   input: "save/RestoreV2_6"
   attr {
     key: "T"
@@ -21315,7 +22388,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@CNN_layer1/Conv/weights"
+        s: "loc:@CNN_layer1/Conv/biases"
       }
     }
   }
@@ -21324,15 +22397,6 @@ node {
     value {
       list {
         shape {
-          dim {
-            size: 10
-          }
-          dim {
-            size: 80
-          }
-          dim {
-            size: 1
-          }
           dim {
             size: 10
           }
@@ -21384,7 +22448,7 @@ node {
             size: 1
           }
         }
-        string_val: "OptimizeLoss/CNN_layer1/Conv/weights/Adam_1"
+        string_val: "OptimizeLoss/CNN_layer1/Conv/biases/Adam_1"
       }
     }
   }
@@ -21453,7 +22517,7 @@ node {
 node {
   name: "save/Assign_7"
   op: "Assign"
-  input: "OptimizeLoss/CNN_layer1/Conv/weights/Adam_1"
+  input: "OptimizeLoss/CNN_layer1/Conv/biases/Adam_1"
   input: "save/RestoreV2_7"
   attr {
     key: "T"
@@ -21465,7 +22529,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@CNN_layer1/Conv/weights"
+        s: "loc:@CNN_layer1/Conv/biases"
       }
     }
   }
@@ -21474,15 +22538,6 @@ node {
     value {
       list {
         shape {
-          dim {
-            size: 10
-          }
-          dim {
-            size: 80
-          }
-          dim {
-            size: 1
-          }
           dim {
             size: 10
           }
@@ -21534,7 +22589,7 @@ node {
             size: 1
           }
         }
-        string_val: "OptimizeLoss/CNN_layer2/Conv/biases/Adam"
+        string_val: "OptimizeLoss/CNN_layer1/Conv/weights/Adam"
       }
     }
   }
@@ -21603,7 +22658,7 @@ node {
 node {
   name: "save/Assign_8"
   op: "Assign"
-  input: "OptimizeLoss/CNN_layer2/Conv/biases/Adam"
+  input: "OptimizeLoss/CNN_layer1/Conv/weights/Adam"
   input: "save/RestoreV2_8"
   attr {
     key: "T"
@@ -21615,7 +22670,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@CNN_layer2/Conv/biases"
+        s: "loc:@CNN_layer1/Conv/weights"
       }
     }
   }
@@ -21624,6 +22679,15 @@ node {
     value {
       list {
         shape {
+          dim {
+            size: 10
+          }
+          dim {
+            size: 80
+          }
+          dim {
+            size: 1
+          }
           dim {
             size: 10
           }
@@ -21675,7 +22739,7 @@ node {
             size: 1
           }
         }
-        string_val: "OptimizeLoss/CNN_layer2/Conv/biases/Adam_1"
+        string_val: "OptimizeLoss/CNN_layer1/Conv/weights/Adam_1"
       }
     }
   }
@@ -21744,7 +22808,7 @@ node {
 node {
   name: "save/Assign_9"
   op: "Assign"
-  input: "OptimizeLoss/CNN_layer2/Conv/biases/Adam_1"
+  input: "OptimizeLoss/CNN_layer1/Conv/weights/Adam_1"
   input: "save/RestoreV2_9"
   attr {
     key: "T"
@@ -21756,7 +22820,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@CNN_layer2/Conv/biases"
+        s: "loc:@CNN_layer1/Conv/weights"
       }
     }
   }
@@ -21765,6 +22829,15 @@ node {
     value {
       list {
         shape {
+          dim {
+            size: 10
+          }
+          dim {
+            size: 80
+          }
+          dim {
+            size: 1
+          }
           dim {
             size: 10
           }
@@ -21816,7 +22889,7 @@ node {
             size: 1
           }
         }
-        string_val: "OptimizeLoss/CNN_layer2/Conv/weights/Adam"
+        string_val: "OptimizeLoss/CNN_layer3/Conv/biases/Adam"
       }
     }
   }
@@ -21885,7 +22958,7 @@ node {
 node {
   name: "save/Assign_10"
   op: "Assign"
-  input: "OptimizeLoss/CNN_layer2/Conv/weights/Adam"
+  input: "OptimizeLoss/CNN_layer3/Conv/biases/Adam"
   input: "save/RestoreV2_10"
   attr {
     key: "T"
@@ -21897,7 +22970,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@CNN_layer2/Conv/weights"
+        s: "loc:@CNN_layer3/Conv/biases"
       }
     }
   }
@@ -21906,15 +22979,6 @@ node {
     value {
       list {
         shape {
-          dim {
-            size: 10
-          }
-          dim {
-            size: 10
-          }
-          dim {
-            size: 1
-          }
           dim {
             size: 10
           }
@@ -21966,7 +23030,7 @@ node {
             size: 1
           }
         }
-        string_val: "OptimizeLoss/CNN_layer2/Conv/weights/Adam_1"
+        string_val: "OptimizeLoss/CNN_layer3/Conv/biases/Adam_1"
       }
     }
   }
@@ -22035,7 +23099,7 @@ node {
 node {
   name: "save/Assign_11"
   op: "Assign"
-  input: "OptimizeLoss/CNN_layer2/Conv/weights/Adam_1"
+  input: "OptimizeLoss/CNN_layer3/Conv/biases/Adam_1"
   input: "save/RestoreV2_11"
   attr {
     key: "T"
@@ -22047,7 +23111,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@CNN_layer2/Conv/weights"
+        s: "loc:@CNN_layer3/Conv/biases"
       }
     }
   }
@@ -22056,15 +23120,6 @@ node {
     value {
       list {
         shape {
-          dim {
-            size: 10
-          }
-          dim {
-            size: 10
-          }
-          dim {
-            size: 1
-          }
           dim {
             size: 10
           }
@@ -22116,7 +23171,7 @@ node {
             size: 1
           }
         }
-        string_val: "OptimizeLoss/beta1_power"
+        string_val: "OptimizeLoss/CNN_layer3/Conv/weights/Adam"
       }
     }
   }
@@ -22185,7 +23240,7 @@ node {
 node {
   name: "save/Assign_12"
   op: "Assign"
-  input: "OptimizeLoss/beta1_power"
+  input: "OptimizeLoss/CNN_layer3/Conv/weights/Adam"
   input: "save/RestoreV2_12"
   attr {
     key: "T"
@@ -22197,7 +23252,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@CNN_layer1/Conv/biases"
+        s: "loc:@CNN_layer3/Conv/weights"
       }
     }
   }
@@ -22206,6 +23261,18 @@ node {
     value {
       list {
         shape {
+          dim {
+            size: 10
+          }
+          dim {
+            size: 10
+          }
+          dim {
+            size: 1
+          }
+          dim {
+            size: 10
+          }
         }
       }
     }
@@ -22254,7 +23321,7 @@ node {
             size: 1
           }
         }
-        string_val: "OptimizeLoss/beta2_power"
+        string_val: "OptimizeLoss/CNN_layer3/Conv/weights/Adam_1"
       }
     }
   }
@@ -22323,7 +23390,7 @@ node {
 node {
   name: "save/Assign_13"
   op: "Assign"
-  input: "OptimizeLoss/beta2_power"
+  input: "OptimizeLoss/CNN_layer3/Conv/weights/Adam_1"
   input: "save/RestoreV2_13"
   attr {
     key: "T"
@@ -22335,7 +23402,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@CNN_layer1/Conv/biases"
+        s: "loc:@CNN_layer3/Conv/weights"
       }
     }
   }
@@ -22344,6 +23411,18 @@ node {
     value {
       list {
         shape {
+          dim {
+            size: 10
+          }
+          dim {
+            size: 10
+          }
+          dim {
+            size: 1
+          }
+          dim {
+            size: 10
+          }
         }
       }
     }
@@ -22392,7 +23471,7 @@ node {
             size: 1
           }
         }
-        string_val: "OptimizeLoss/fully_connected/biases/Adam"
+        string_val: "OptimizeLoss/beta1_power"
       }
     }
   }
@@ -22461,7 +23540,7 @@ node {
 node {
   name: "save/Assign_14"
   op: "Assign"
-  input: "OptimizeLoss/fully_connected/biases/Adam"
+  input: "OptimizeLoss/beta1_power"
   input: "save/RestoreV2_14"
   attr {
     key: "T"
@@ -22473,7 +23552,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@fully_connected/biases"
+        s: "loc:@CNN_layer1/Conv/biases"
       }
     }
   }
@@ -22482,9 +23561,6 @@ node {
     value {
       list {
         shape {
-          dim {
-            size: 17
-          }
         }
       }
     }
@@ -22533,7 +23609,7 @@ node {
             size: 1
           }
         }
-        string_val: "OptimizeLoss/fully_connected/biases/Adam_1"
+        string_val: "OptimizeLoss/beta2_power"
       }
     }
   }
@@ -22602,7 +23678,7 @@ node {
 node {
   name: "save/Assign_15"
   op: "Assign"
-  input: "OptimizeLoss/fully_connected/biases/Adam_1"
+  input: "OptimizeLoss/beta2_power"
   input: "save/RestoreV2_15"
   attr {
     key: "T"
@@ -22614,7 +23690,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@fully_connected/biases"
+        s: "loc:@CNN_layer1/Conv/biases"
       }
     }
   }
@@ -22623,9 +23699,6 @@ node {
     value {
       list {
         shape {
-          dim {
-            size: 17
-          }
         }
       }
     }
@@ -22674,7 +23747,7 @@ node {
             size: 1
           }
         }
-        string_val: "OptimizeLoss/fully_connected/weights/Adam"
+        string_val: "OptimizeLoss/fully_connected/biases/Adam"
       }
     }
   }
@@ -22743,7 +23816,7 @@ node {
 node {
   name: "save/Assign_16"
   op: "Assign"
-  input: "OptimizeLoss/fully_connected/weights/Adam"
+  input: "OptimizeLoss/fully_connected/biases/Adam"
   input: "save/RestoreV2_16"
   attr {
     key: "T"
@@ -22755,7 +23828,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@fully_connected/weights"
+        s: "loc:@fully_connected/biases"
       }
     }
   }
@@ -22764,9 +23837,6 @@ node {
     value {
       list {
         shape {
-          dim {
-            size: 10
-          }
           dim {
             size: 17
           }
@@ -22818,7 +23888,7 @@ node {
             size: 1
           }
         }
-        string_val: "OptimizeLoss/fully_connected/weights/Adam_1"
+        string_val: "OptimizeLoss/fully_connected/biases/Adam_1"
       }
     }
   }
@@ -22887,7 +23957,7 @@ node {
 node {
   name: "save/Assign_17"
   op: "Assign"
-  input: "OptimizeLoss/fully_connected/weights/Adam_1"
+  input: "OptimizeLoss/fully_connected/biases/Adam_1"
   input: "save/RestoreV2_17"
   attr {
     key: "T"
@@ -22899,7 +23969,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@fully_connected/weights"
+        s: "loc:@fully_connected/biases"
       }
     }
   }
@@ -22908,9 +23978,6 @@ node {
     value {
       list {
         shape {
-          dim {
-            size: 10
-          }
           dim {
             size: 17
           }
@@ -22962,7 +24029,7 @@ node {
             size: 1
           }
         }
-        string_val: "OptimizeLoss/learning_rate"
+        string_val: "OptimizeLoss/fully_connected/weights/Adam"
       }
     }
   }
@@ -23031,7 +24098,7 @@ node {
 node {
   name: "save/Assign_18"
   op: "Assign"
-  input: "OptimizeLoss/learning_rate"
+  input: "OptimizeLoss/fully_connected/weights/Adam"
   input: "save/RestoreV2_18"
   attr {
     key: "T"
@@ -23043,7 +24110,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@OptimizeLoss/learning_rate"
+        s: "loc:@fully_connected/weights"
       }
     }
   }
@@ -23052,6 +24119,12 @@ node {
     value {
       list {
         shape {
+          dim {
+            size: 10
+          }
+          dim {
+            size: 17
+          }
         }
       }
     }
@@ -23100,7 +24173,7 @@ node {
             size: 1
           }
         }
-        string_val: "OptimizeLoss/words/embeddings/Adam"
+        string_val: "OptimizeLoss/fully_connected/weights/Adam_1"
       }
     }
   }
@@ -23169,7 +24242,7 @@ node {
 node {
   name: "save/Assign_19"
   op: "Assign"
-  input: "OptimizeLoss/words/embeddings/Adam"
+  input: "OptimizeLoss/fully_connected/weights/Adam_1"
   input: "save/RestoreV2_19"
   attr {
     key: "T"
@@ -23181,7 +24254,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@words/embeddings"
+        s: "loc:@fully_connected/weights"
       }
     }
   }
@@ -23191,10 +24264,10 @@ node {
       list {
         shape {
           dim {
-            size: 2127
+            size: 10
           }
           dim {
-            size: 80
+            size: 17
           }
         }
       }
@@ -23244,7 +24317,7 @@ node {
             size: 1
           }
         }
-        string_val: "OptimizeLoss/words/embeddings/Adam_1"
+        string_val: "OptimizeLoss/learning_rate"
       }
     }
   }
@@ -23313,7 +24386,7 @@ node {
 node {
   name: "save/Assign_20"
   op: "Assign"
-  input: "OptimizeLoss/words/embeddings/Adam_1"
+  input: "OptimizeLoss/learning_rate"
   input: "save/RestoreV2_20"
   attr {
     key: "T"
@@ -23325,7 +24398,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@words/embeddings"
+        s: "loc:@OptimizeLoss/learning_rate"
       }
     }
   }
@@ -23334,12 +24407,6 @@ node {
     value {
       list {
         shape {
-          dim {
-            size: 2127
-          }
-          dim {
-            size: 80
-          }
         }
       }
     }
@@ -23388,7 +24455,7 @@ node {
             size: 1
           }
         }
-        string_val: "fully_connected/biases"
+        string_val: "OptimizeLoss/words/embeddings/Adam"
       }
     }
   }
@@ -23457,7 +24524,7 @@ node {
 node {
   name: "save/Assign_21"
   op: "Assign"
-  input: "fully_connected/biases"
+  input: "OptimizeLoss/words/embeddings/Adam"
   input: "save/RestoreV2_21"
   attr {
     key: "T"
@@ -23469,7 +24536,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@fully_connected/biases"
+        s: "loc:@words/embeddings"
       }
     }
   }
@@ -23479,7 +24546,10 @@ node {
       list {
         shape {
           dim {
-            size: 17
+            size: 1791
+          }
+          dim {
+            size: 80
           }
         }
       }
@@ -23529,7 +24599,7 @@ node {
             size: 1
           }
         }
-        string_val: "fully_connected/weights"
+        string_val: "OptimizeLoss/words/embeddings/Adam_1"
       }
     }
   }
@@ -23598,7 +24668,7 @@ node {
 node {
   name: "save/Assign_22"
   op: "Assign"
-  input: "fully_connected/weights"
+  input: "OptimizeLoss/words/embeddings/Adam_1"
   input: "save/RestoreV2_22"
   attr {
     key: "T"
@@ -23610,7 +24680,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@fully_connected/weights"
+        s: "loc:@words/embeddings"
       }
     }
   }
@@ -23620,10 +24690,10 @@ node {
       list {
         shape {
           dim {
-            size: 10
+            size: 1791
           }
           dim {
-            size: 17
+            size: 80
           }
         }
       }
@@ -23673,7 +24743,7 @@ node {
             size: 1
           }
         }
-        string_val: "global_step"
+        string_val: "fully_connected/biases"
       }
     }
   }
@@ -23734,7 +24804,7 @@ node {
     key: "dtypes"
     value {
       list {
-        type: DT_INT64
+        type: DT_FLOAT
       }
     }
   }
@@ -23742,19 +24812,19 @@ node {
 node {
   name: "save/Assign_23"
   op: "Assign"
-  input: "global_step"
+  input: "fully_connected/biases"
   input: "save/RestoreV2_23"
   attr {
     key: "T"
     value {
-      type: DT_INT64
+      type: DT_FLOAT
     }
   }
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@global_step"
+        s: "loc:@fully_connected/biases"
       }
     }
   }
@@ -23763,6 +24833,9 @@ node {
     value {
       list {
         shape {
+          dim {
+            size: 17
+          }
         }
       }
     }
@@ -23811,7 +24884,7 @@ node {
             size: 1
           }
         }
-        string_val: "words/embeddings"
+        string_val: "fully_connected/weights"
       }
     }
   }
@@ -23880,8 +24953,290 @@ node {
 node {
   name: "save/Assign_24"
   op: "Assign"
-  input: "words/embeddings"
+  input: "fully_connected/weights"
   input: "save/RestoreV2_24"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@fully_connected/weights"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 10
+          }
+          dim {
+            size: 17
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "use_locking"
+    value {
+      b: true
+    }
+  }
+  attr {
+    key: "validate_shape"
+    value {
+      b: true
+    }
+  }
+}
+node {
+  name: "save/RestoreV2_25/tensor_names"
+  op: "Const"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_STRING
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_STRING
+        tensor_shape {
+          dim {
+            size: 1
+          }
+        }
+        string_val: "global_step"
+      }
+    }
+  }
+}
+node {
+  name: "save/RestoreV2_25/shape_and_slices"
+  op: "Const"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_STRING
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_STRING
+        tensor_shape {
+          dim {
+            size: 1
+          }
+        }
+        string_val: ""
+      }
+    }
+  }
+}
+node {
+  name: "save/RestoreV2_25"
+  op: "RestoreV2"
+  input: "save/Const"
+  input: "save/RestoreV2_25/tensor_names"
+  input: "save/RestoreV2_25/shape_and_slices"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          unknown_rank: true
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtypes"
+    value {
+      list {
+        type: DT_INT64
+      }
+    }
+  }
+}
+node {
+  name: "save/Assign_25"
+  op: "Assign"
+  input: "global_step"
+  input: "save/RestoreV2_25"
+  attr {
+    key: "T"
+    value {
+      type: DT_INT64
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@global_step"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+  attr {
+    key: "use_locking"
+    value {
+      b: true
+    }
+  }
+  attr {
+    key: "validate_shape"
+    value {
+      b: true
+    }
+  }
+}
+node {
+  name: "save/RestoreV2_26/tensor_names"
+  op: "Const"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_STRING
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_STRING
+        tensor_shape {
+          dim {
+            size: 1
+          }
+        }
+        string_val: "words/embeddings"
+      }
+    }
+  }
+}
+node {
+  name: "save/RestoreV2_26/shape_and_slices"
+  op: "Const"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_STRING
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_STRING
+        tensor_shape {
+          dim {
+            size: 1
+          }
+        }
+        string_val: ""
+      }
+    }
+  }
+}
+node {
+  name: "save/RestoreV2_26"
+  op: "RestoreV2"
+  input: "save/Const"
+  input: "save/RestoreV2_26/tensor_names"
+  input: "save/RestoreV2_26/shape_and_slices"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          unknown_rank: true
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtypes"
+    value {
+      list {
+        type: DT_FLOAT
+      }
+    }
+  }
+}
+node {
+  name: "save/Assign_26"
+  op: "Assign"
+  input: "words/embeddings"
+  input: "save/RestoreV2_26"
   attr {
     key: "T"
     value {
@@ -23902,7 +25257,7 @@ node {
       list {
         shape {
           dim {
-            size: 2127
+            size: 1791
           }
           dim {
             size: 80
@@ -23952,6 +25307,8 @@ node {
   input: "^save/Assign_22"
   input: "^save/Assign_23"
   input: "^save/Assign_24"
+  input: "^save/Assign_25"
+  input: "^save/Assign_26"
 }
 node {
   name: "save/restore_all"
