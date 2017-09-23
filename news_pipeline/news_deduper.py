@@ -9,6 +9,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'common'))
 import mongodb_client
 from cloudAMQP_client import CloundAMQPClient as CloudAMQPClient
 import news_topic_modeling_service_client
+from logger.log import *
 
 DEDUPE_NEWS_TASK_QUEUE_URL = "amqp://rcsdmawz:QDrDPYaGXyAA0WU8NiVWopTTH3yVkULw@wasp.rmq.cloudamqp.com/rcsdmawz"
 DEDUPE_NEWS_TASK_QUEUE_NAME = "news-deduper"
@@ -67,7 +68,7 @@ def handle_message(msg):
         topic = news_topic_modeling_service_client.classify(title)
         task['class'] = topic
     db[NEWS_TABLE_NAME].replace_one({'digest': task['digest']}, task, upsert=True)
-    print "=" * 10 + "inserted one news in mongodb" + "=" * 10
+    LOGGING_NEWS_DEDUPER.info("inserted:1")
 
 while True:
     if cloudAMQP_client is not None:
