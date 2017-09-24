@@ -19,14 +19,14 @@ LOG_CONFIG = {
     'version': 1.0,
     'formatters': {
         'simple': {
-            'format': '%(name)s - %(levelname)s - %(message)s',
+            'format': '%(name)s %(levelname)s %(message)s',
         },
         'detail': {
-            'format': '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-            'datefmt': "%Y-%m-%d %H:%M:%S"
+            'format': '%(name)s %(levelname)s %(message)s',
+            # 'datefmt': "%Y-%m-%d %H:%M:%S"
         },
         'optional': {
-            'format': '%(filename)s %(lineno)d - %(levelname)s - %(message)s',
+            'format': '%(filename)s %(lineno)d %(levelname)s %(message)s',
         }
     },
     'handlers': {

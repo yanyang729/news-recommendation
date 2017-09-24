@@ -11,7 +11,7 @@
     "LOG_CLICKS_TASK_QUEUE_NAME" : "log-clicks"
   },
   "server":{
-  "SERVER_HOST" :"localhost",
-  "SERVER_PORT" : 4040
+    "SERVER_HOST" :"localhost",
+    "SERVER_PORT" : 4040
   }
 }

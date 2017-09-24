@@ -6,10 +6,11 @@ from dateutil import parser
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'common'))
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'logger'))
 import mongodb_client
 from cloudAMQP_client import CloundAMQPClient as CloudAMQPClient
 import news_topic_modeling_service_client
-from logger.log import *
+from log import *
 
 DEDUPE_NEWS_TASK_QUEUE_URL = "amqp://rcsdmawz:QDrDPYaGXyAA0WU8NiVWopTTH3yVkULw@wasp.rmq.cloudamqp.com/rcsdmawz"
 DEDUPE_NEWS_TASK_QUEUE_NAME = "news-deduper"
@@ -68,6 +69,7 @@ def handle_message(msg):
         topic = news_topic_modeling_service_client.classify(title)
         task['class'] = topic
     db[NEWS_TABLE_NAME].replace_one({'digest': task['digest']}, task, upsert=True)
+
     LOGGING_NEWS_DEDUPER.info("inserted:1")
 
 while True:
@@ -76,7 +78,7 @@ while True:
         try:
             handle_message(msg)
         except Exception as e:
-            print e
+            print "news_deduper: " + e
             pass
 
         cloudAMQP_client.sleep(SLEEP_TIME_IN_SECONDS)

@@ -32,8 +32,12 @@ NEWS_SOURCES = [
     'the-washington-post'
 ]
 
-redis_client = redis.StrictRedis(REDIS_HOST, REDIS_PORT)
+redis_client = redis.StrictRedis(REDIS_HOST, REDIS_PORT,0)
+redis_client.flushdb()
+
 cloudAMQP_client = CloudAMQPClient(SCRAPE_NEWS_TASK_QUEUE_URL, SCRAPE_NEWS_TASK_QUEUE_NAME)
+
+
 
 while True:
 
@@ -43,7 +47,6 @@ while True:
 
     for news in news_list:
         news_digest = hashlib.md5(news['title'].encode('utf-8')).digest().encode('base64')
-
         if redis_client.get(news_digest) is None:
             num_of_news += 1
             news['digest'] = news_digest
